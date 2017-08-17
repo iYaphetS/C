@@ -26,13 +26,13 @@ void s_reverse(char *s)
 }
 
 
-//itoaÊµÏÖ·½·¨
-//¿ÉÒÔÓÃsprintf(s, "%d", num);Ò»²½ÊµÏÖ
+//itoaå®ç°æ–¹æ³•
+//å¯ä»¥ç”¨sprintf(s, "%d", num);ä¸€æ­¥å®ç°
 /*
- * ½øÖÆ×ª»»
- * 1.Ê®½øÖÆ×ª°Ë½øÖÆÊı×Ö·û´®----sprintf(buf, "%o", num);---atoi(buf)
- * 2.Ê®½øÖÆ×ªÊ®Áù½øÖÆ×Ö·û´®--sprintf(buf, "%x", num);----atoi(buf)
- * 3.Ê®½øÖÆ×ª¶ş½øÖÆ----
+ * è¿›åˆ¶è½¬æ¢
+ * 1.åè¿›åˆ¶è½¬å…«è¿›åˆ¶æ•°å­—ç¬¦ä¸²----sprintf(buf, "%o", num);---atoi(buf)
+ * 2.åè¿›åˆ¶è½¬åå…­è¿›åˆ¶å­—ç¬¦ä¸²--sprintf(buf, "%x", num);----atoi(buf)
+ * 3.åè¿›åˆ¶è½¬äºŒè¿›åˆ¶----
  * int i = 0;
  * while(num)
  * {
@@ -68,7 +68,7 @@ void myitoa(int num, char *s)
 int main26()
 {
     /*
-itoaÊµÏÖ
+itoaå®ç°
 */
     printf("please input a number:");
     int num;

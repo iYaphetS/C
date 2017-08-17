@@ -4,7 +4,7 @@
 #include <string.h>
 
 #define MAXSIZE 1024
-//Õ»µÄĞÅÏ¢
+//æ ˆçš„ä¿¡æ¯
 typedef struct SeqStack
 {
 	void *data[MAXSIZE];
@@ -16,17 +16,17 @@ typedef void* Stack;
 #ifdef __cplusplus
 extern "C"{
 #endif
-	//Õ»µÄ³õÊ¼»¯
+	//æ ˆçš„åˆå§‹åŒ–
 	Stack init_Stack();
-	//Ñ¹Õ»
+	//å‹æ ˆ
 	void push_Stack(Stack stack, void *data);
-	//³öÕ»
+	//å‡ºæ ˆ
 	void pop_Stack(Stack stack);
-	//´ÓÕ»¶¥µ¯³öÔªËØ
+	//ä»æ ˆé¡¶å¼¹å‡ºå…ƒç´ 
 	void* top_Stack(Stack stack);
-	//»ñµÃÕ»ÔªËØµÄ¸öÊı
+	//è·å¾—æ ˆå…ƒç´ çš„ä¸ªæ•°
 	int size_Stack(Stack stack);
-	//Ïú»ÙÕ»
+	//é”€æ¯æ ˆ
 	void destroy_Stack(Stack stack);
 
 #ifdef __cplusplus

@@ -1,5 +1,5 @@
 #include "SeqStack1.h"
-//°ÑÁ´±íµÄÎ²²¿µ±³ÉÕ»¶¥(Î²²¿ÔöÉ¾)
+//æŠŠé“¾è¡¨çš„å°¾éƒ¨å½“æˆæ ˆé¡¶(å°¾éƒ¨å¢åˆ )
 Stack *init_Stack()
 {
 	Stack *stack = calloc(1, sizeof(Stack));
@@ -17,13 +17,13 @@ void push_Stack(Stack *stack, void *data)
 	{
 		return;
 	}	
-	//ÕÒµ½Ö¸ÏòÕ»¶¥Ö¸Õë
+	//æ‰¾åˆ°æŒ‡å‘æ ˆé¡¶æŒ‡é’ˆ
 	LinkNode *pCur = &stack->head;
 	for(int i = 0; i < stack->size; i++)
 	{
 		pCur = pCur->next;
 	}
-	LinkNode *pNew = (LinkNode *)data;//ÔªËØÖ¸ÕëÇ¿×ª³ÉLinkNode*Ö¸Õë
+	LinkNode *pNew = (LinkNode *)data;//å…ƒç´ æŒ‡é’ˆå¼ºè½¬æˆLinkNode*æŒ‡é’ˆ
 	pCur->next = pNew;
 	stack->size++;
 }
@@ -38,7 +38,7 @@ void pop_Stack(Stack *stack)
 		return;
 	}
 	/*LinkNode *pCur = &stack->head;
-	//ÕÒµ½Ö¸ÏòÕ»¶¥µÄÇ°Ò»¸ö½ÚµãµÄÖ¸Õë
+	//æ‰¾åˆ°æŒ‡å‘æ ˆé¡¶çš„å‰ä¸€ä¸ªèŠ‚ç‚¹çš„æŒ‡é’ˆ
 	for (int i = 0; i < stack->size - 1; i++)
 	{
 		pCur = pCur->next;
@@ -53,7 +53,7 @@ void* top_Stack(Stack *stack)
 	{
 		return NULL;
 	}
-	//ÕÒµ½Ö¸ÏòÕ»¶¥ÔªËØµÄÖ¸Õë
+	//æ‰¾åˆ°æŒ‡å‘æ ˆé¡¶å…ƒç´ çš„æŒ‡é’ˆ
 	LinkNode *pCur = &stack->head;
 	for(int i = 0; i < stack->size; i++)
 	{

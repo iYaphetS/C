@@ -17,7 +17,7 @@ void countLeafNode(TreeNode *root, int *num)
 	}
 	if (root->lchild == NULL && root->rchild == NULL)
 	{
-		(*num)++;//Òª´øÀ¨ºÅ
+		(*num)++;//è¦å¸¦æ‹¬å·
 	}
 	countLeafNode(root->lchild, num);
 	countLeafNode(root->rchild, num);

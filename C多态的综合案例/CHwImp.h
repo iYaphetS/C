@@ -1,6 +1,6 @@
 #pragma once
 
-//加解密函数的声明
+//鍔犺В瀵嗗嚱鏁扮殑澹版槑
 
 int enc_file(unsigned char *src, int src_len, unsigned char *dest, int *dest_len);
 

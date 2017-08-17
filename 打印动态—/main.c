@@ -6,15 +6,15 @@
 #include <string.h>
 #include <math.h>
 
-int main2()
+int main()
 {
     //- \ | /
     while(1)
     {
-        //×ªÒå×Ö·û \\ \r \n \b \t \0
+        //è½¬ä¹‰å­—ç¬¦ \\ \r \n \b \t \0
         printf("%s", "-");
-        Sleep(1);//ºÁÃëµ¥Î»
-        printf("%c", '\b');//ÍË¸ñ
+        Sleep(1);//æ¯«ç§’å•ä½
+        printf("%c", '\b');//é€€æ ¼
 
         printf("%c", '\\');
         Sleep(1);

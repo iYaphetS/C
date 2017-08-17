@@ -4,14 +4,14 @@
 #pragma warning(disable:4996)
 
 /*
-��֪ char **p = NULL; int lines ��д���ļ����������ļ��ж�ȡ���ݣ�Ϊÿһ�����ݰ���С����ռ䡣
+已知 char **p = NULL; int lines 编写读文件函数，从文件中读取内容，为每一行内容按大小分配空间。
 void readFile(char ***p,int *line);
 
-�ļ����ݲο���demo.txt��
+文件内容参考《demo.txt》
 
-��ʾ��
-����ɨ���ļ�����������������ָ��p����ָ������ռ䡣
-�ٸ���ÿ�����ݣ���̬����ռ䣬���ÿ�����ݡ�
+提示：
+首先扫描文件行数，根据行数给指针p分配指针数组空间。
+再根据每行内容，动态分配空间，存放每行内容。
 */
 
 void readFile(char ***p, int *line)

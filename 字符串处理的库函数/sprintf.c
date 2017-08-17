@@ -9,7 +9,7 @@ int main()
 	int a = 3;
 	int b = 7;
 
-	ret = sprintf(s, " %d plus %d is %d", a, b, a + b);//·µ»Ø¸ñÊ½»¯ºóµÄ×Ö·û´®ÓĞ¶à³¤
+	ret = sprintf(s, " %d plus %d is %d", a, b, a + b);//è¿”å›æ ¼å¼åŒ–åçš„å­—ç¬¦ä¸²æœ‰å¤šé•¿
 
 	printf("[%s] is a string %d char long\n", s, ret);
 

@@ -15,19 +15,19 @@ typedef void * SqeQueue;
 #ifdef __cplusplus
 extern "C" {
 #endif
-	//Ë³Ğò¶ÓÁĞµÄ³õÊ¼»¯
+	//é¡ºåºé˜Ÿåˆ—çš„åˆå§‹åŒ–
 	int init_SqeQueue(SqeQueue * squeue);
-	//Èë¶Ó
+	//å…¥é˜Ÿ
 	int push_SqeQueue(SqeQueue queue, void *data);
-	//³ö¶Ó
+	//å‡ºé˜Ÿ
 	int pop_SqeQueue(SqeQueue queue);
-	//»ñµÃ¶ÔÍ·ÔªËØ
+	//è·å¾—å¯¹å¤´å…ƒç´ 
 	void* fornt_SqeQueue(SqeQueue queue);
-	//»ñµÃ¶ÓÎ²ÔªËØ
+	//è·å¾—é˜Ÿå°¾å…ƒç´ 
 	void* back_SqeQueue(SqeQueue queue);
-	//»ñµÃ¶ÓÁĞ´óĞ¡
+	//è·å¾—é˜Ÿåˆ—å¤§å°
 	int size_SqeQueue(SqeQueue queue);
-	//Ïú»Ù¶ÓÁĞ
+	//é”€æ¯é˜Ÿåˆ—
 	int destory_SqeQueue(SqeQueue queue);
 
 #ifdef __cplusplus

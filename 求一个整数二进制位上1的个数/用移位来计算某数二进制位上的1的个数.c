@@ -1,7 +1,7 @@
 #include <stdio.h>
 #pragma warning(disable:4996)
-//¼ÆËãÒ»¸öÎŞ·ûºÅµÄÊıÖĞ£¬¶ş½øÖÆÎ»ÖĞÖµÎª 1 µÄ¸öÊı
-//ÌáÊ¾£º >>
+//è®¡ç®—ä¸€ä¸ªæ— ç¬¦å·çš„æ•°ä¸­ï¼ŒäºŒè¿›åˆ¶ä½ä¸­å€¼ä¸º 1 çš„ä¸ªæ•°
+//æç¤ºï¼š >>
 
 int count_one_bits(unsigned int tmp)
 {
@@ -10,11 +10,11 @@ int count_one_bits(unsigned int tmp)
 	{
 		if ((tmp & 01) == 1)
 			count++;
-		tmp >>= 1;//temp = temp >> 1;//×¢ÒâÊÇÎŞ·ûºÅÊı
+		tmp >>= 1;//temp = temp >> 1;//æ³¨æ„æ˜¯æ— ç¬¦å·æ•°
 	}*/
 	while (tmp)
 	{
-		tmp = tmp & (tmp - 1);//Ã¿ÔËËãÒ»´Î½«tmp¶ş½øÖÆÎ»ÉÏ£¨´ÓÓÒÏò×ó£©1±ä³É0£¬ÖªµÀtmp±ä³É0
+		tmp = tmp & (tmp - 1);//æ¯è¿ç®—ä¸€æ¬¡å°†tmpäºŒè¿›åˆ¶ä½ä¸Šï¼ˆä»å³å‘å·¦ï¼‰1å˜æˆ0ï¼ŒçŸ¥é“tmpå˜æˆ0
 		count++;
 	}
 	return count;

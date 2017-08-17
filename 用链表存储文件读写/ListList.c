@@ -18,7 +18,7 @@ int insert_LinkList(LList * list, int pos, void *data)
 		pos = List->size;
 	}
 
-	//ÕÒµ½Òª²åÈëÎ»ÖÃµÄÇ°Ò»¸ö½Úµã
+	//æ‰¾åˆ°è¦æ’å…¥ä½ç½®çš„å‰ä¸€ä¸ªèŠ‚ç‚¹
 	LinkNode *pCur = &List->head;
 	for (int i = 0; i < pos; i++)
 	{
@@ -50,14 +50,14 @@ int delete_LinkList(LList *list, int pos)
 		return 0;
 	}
 	LinkNode *pCur = &List->head;
-	//ÕÒµ½ÒªÉ¾³ıµÄ½ÚµãµÄÉÏÒ»¸ö½Úµã
+	//æ‰¾åˆ°è¦åˆ é™¤çš„èŠ‚ç‚¹çš„ä¸Šä¸€ä¸ªèŠ‚ç‚¹
 	for (int i = 0; i < pos; i++)
 	{
 		pCur = pCur->next;
 	}
 	LinkNode *pDel = pCur->next;
-	//ÓÉÓÚ½Úµã½á¹¹ÌåÖĞÊı¾İÖ¸ÕëdataÊÇÖ¸ÏòÓÃ»§´´½¨µÄ¶Ñ¿Õ¼ä
-	//ËùÒÔÔÚÊÍ·Å½ÚµãÇ°Òª½«dataÖ¸ÏòµÄ¶Ñ¿Õ¼äÒ²ÒªÊÇÊÍ·Å£¬²»È»ÄÚ´æĞ¹Â©
+	//ç”±äºèŠ‚ç‚¹ç»“æ„ä½“ä¸­æ•°æ®æŒ‡é’ˆdataæ˜¯æŒ‡å‘ç”¨æˆ·åˆ›å»ºçš„å †ç©ºé—´
+	//æ‰€ä»¥åœ¨é‡Šæ”¾èŠ‚ç‚¹å‰è¦å°†dataæŒ‡å‘çš„å †ç©ºé—´ä¹Ÿè¦æ˜¯é‡Šæ”¾ï¼Œä¸ç„¶å†…å­˜æ³„æ¼
 	free(pDel->data);
 	pDel->data = NULL;
 
@@ -110,7 +110,7 @@ int destory_LinkList(LList *list)
 		return -1;
 	}
 	LinkList *List = (LinkList *)list;
-	LinkNode *pCur = List->head.next;//Í·½áµãÔÚÁ´±íµÄĞÅÏ¢½á¹¹ÌåÖĞ£¬²»Òª¶à´ÎÊÍ·Å
+	LinkNode *pCur = List->head.next;//å¤´ç»“ç‚¹åœ¨é“¾è¡¨çš„ä¿¡æ¯ç»“æ„ä½“ä¸­ï¼Œä¸è¦å¤šæ¬¡é‡Šæ”¾
 	while (pCur != NULL)
 	{
 		LinkNode *temp = pCur->next;

@@ -9,8 +9,8 @@
 int main34()
 {
     /*
-�ҳ��ļ�������/���ر���С���ˣ�����δ֪��
-�ļ���ʽ:
+找出文件中身高/体重比最小的人，行数未知。
+文件格式:
 
 name=xxx1,high=xxxx,weight=xxxxx
 name=xxx2,high=xxxx,weight=xxxxx

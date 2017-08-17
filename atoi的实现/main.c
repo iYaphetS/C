@@ -25,7 +25,7 @@ int myatoi(char *s)
         num = num*10 + (s[i] - '0');
         i++;
     }
-    /*myatoi¸´ÔÓËã·¨
+    /*myatoiå¤æ‚ç®—æ³•
 
 int mystrlen(char *s)
 {
@@ -83,7 +83,7 @@ int myatoi(char *s)
 int main25()
 {
     /*
-atoiÊµÏÖ
+atoiå®ç°
 */
     char buf[128] = " 1234";//"   234", "+123", "  -122"
 

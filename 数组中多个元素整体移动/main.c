@@ -6,7 +6,7 @@
 #include <string.h>
 #include <math.h>
 
-//½«Ò»¸ö¶¨³¤µÄÊý×é×Ó´®£¨»òÕß×Ö·û´®µÄ×Ó´®£©ÕûÌåÏòÓÒÒÆ¶¯k¸öÎ»ÖÃ
+//å°†ä¸€ä¸ªå®šé•¿çš„æ•°ç»„å­ä¸²ï¼ˆæˆ–è€…å­—ç¬¦ä¸²çš„å­ä¸²ï¼‰æ•´ä½“å‘å³ç§»åŠ¨kä¸ªä½ç½®
 void move_right(int *arr, int n, int k)//
 {
     for(int i = 0; i < k; i++)
@@ -23,7 +23,7 @@ void move_right(int *arr, int n, int k)//
 int main22()
 {
     /*
-ÓÐn¸öÕûÊý£¬±à³ÌÐò½«Ç°ÃæµÄ¸÷¸öÊýÒÀ´ÎÏòºóÒÆ¶¯k¸öÎ»ÖÃ£¬×îºók¸öÊýÒÆµ½×îÇ°±ßµÄk¸öÎ»ÖÃ
+æœ‰nä¸ªæ•´æ•°ï¼Œç¼–ç¨‹åºå°†å‰é¢çš„å„ä¸ªæ•°ä¾æ¬¡å‘åŽç§»åŠ¨kä¸ªä½ç½®ï¼Œæœ€åŽkä¸ªæ•°ç§»åˆ°æœ€å‰è¾¹çš„kä¸ªä½ç½®
 */
     int arr[] = {2, 3, 5, 8, 4, 9, 7};
     int len = sizeof(arr) / sizeof(arr[0]);

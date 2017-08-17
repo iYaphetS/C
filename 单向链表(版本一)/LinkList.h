@@ -3,20 +3,20 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-//½ÚµãÊı¾İĞÅÏ¢
+//èŠ‚ç‚¹æ•°æ®ä¿¡æ¯
 typedef struct LinkNode
 {
-	void *data;//´æ·ÅÊı¾İµÄÊ×µØÖ·
+	void *data;//å­˜æ”¾æ•°æ®çš„é¦–åœ°å€
 	struct LinkNode * next;
 }LinkNode;
 
-//Á´±íÕûÌåµÄĞÅÏ¢
+//é“¾è¡¨æ•´ä½“çš„ä¿¡æ¯
 typedef struct LinkList
 {
-	LinkNode head;//ÄÃµ½Í·½Úµã¾ÍÄÃµ½ÁËÕû¸öÁ´±í
-	//Óë¶¯Ì¬Êı×é²»Í¬£¬Êı×éĞèÒªvoid **p´æ·ÅÁ¬Ğø¶à¸öµÄvoid *£¨Ã¿¸öÊı¾İµÄÊ×µØÖ·£©Êı×éµÄµØÖ·
-	//²ÅÄÜÄÃµ½Õû¸öÊı×éµÄĞÅÏ¢£¬¶øÁ´±íÖ»ĞèÒªÍ·½áµã
-	int size;//Á´±íÓĞĞ§ÔªËØµÄ¸öÊı
+	LinkNode head;//æ‹¿åˆ°å¤´èŠ‚ç‚¹å°±æ‹¿åˆ°äº†æ•´ä¸ªé“¾è¡¨
+	//ä¸åŠ¨æ€æ•°ç»„ä¸åŒï¼Œæ•°ç»„éœ€è¦void **på­˜æ”¾è¿ç»­å¤šä¸ªçš„void *ï¼ˆæ¯ä¸ªæ•°æ®çš„é¦–åœ°å€ï¼‰æ•°ç»„çš„åœ°å€
+	//æ‰èƒ½æ‹¿åˆ°æ•´ä¸ªæ•°ç»„çš„ä¿¡æ¯ï¼Œè€Œé“¾è¡¨åªéœ€è¦å¤´ç»“ç‚¹
+	int size;//é“¾è¡¨æœ‰æ•ˆå…ƒç´ çš„ä¸ªæ•°
 }LinkList;
 
 typedef void * LList;
@@ -28,27 +28,27 @@ typedef bool(*COMPARY)(void *data1, void *data2);
 #ifdef __cplusplus
 extern "C" {
 #endif
-	//Á´±íµÄ³õÊ¼»¯
+	//é“¾è¡¨çš„åˆå§‹åŒ–
 	LList LinkList_init();
-	//½Úµã²åÈë
+	//èŠ‚ç‚¹æ’å…¥
 	void  LinkList_insert(LList *list, int pos, void *data);
-	//ÔªËØÉ¾³ı
+	//å…ƒç´ åˆ é™¤
 	void LinkList_delete(LList *list, int pos);
-	//Á´±í±éÀú
+	//é“¾è¡¨éå†
 	void LinkList_foreach(LList *list, FOREACH foreach);
-	//ÄæĞò±éÀúµ÷ÓÃrecursion_foreachº¯Êı£¨µİ¹é±éÀú½Úµã£©
+	//é€†åºéå†è°ƒç”¨recursion_foreachå‡½æ•°ï¼ˆé€’å½’éå†èŠ‚ç‚¹ï¼‰
 	void LinkList_reverse_foreach(LList *list, FOREACH foreach);
-	//Á´±íµÄÏú»Ù
+	//é“¾è¡¨çš„é”€æ¯
 	void LinkList_destroy(LList *list);
-	//¸ù¾İÊı¾İ²éÕÒ½Úµã
+	//æ ¹æ®æ•°æ®æŸ¥æ‰¾èŠ‚ç‚¹
 	void* LinkList_searchNodeByval(LList *list, void *data, COMPARY compary);
-	//µİ¹é±éÀú
+	//é€’å½’éå†
 	void recursion_foreach(LNode node, FOREACH foreach);
-	//Ã°ÅİÅÅĞò
+	//å†’æ³¡æ’åº
 	void LinkList_BubbleSort(LList *list, int(*compare)(void*, void*));
-	//Ñ¡ÔñÅÅĞò
+	//é€‰æ‹©æ’åº
 	void LinkList_SelectionSort(LList *list, int(*compare)(void*, void*));
-	//Á´±íÄæĞò
+	//é“¾è¡¨é€†åº
 	void LinkList_reverse(LList *list);
 
 

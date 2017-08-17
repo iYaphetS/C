@@ -47,8 +47,8 @@ ul Fibonacci_unrecursive(int n)
 int main43()
 {
 /*
-1.斐波纳契数列的递归代码实现
-2.斐波纳契数列的非递归代码实现
+1.鏂愭尝绾冲鏁板垪鐨勯�掑綊浠ｇ爜瀹炵幇
+2.鏂愭尝绾冲鏁板垪鐨勯潪閫掑綊浠ｇ爜瀹炵幇
 */
     int n;
     ul ret;

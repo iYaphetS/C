@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
-* 实现一个十进制转二进制的函数，传入一个十进制数，以二进制形式输出
+* 瀹炵幇涓�涓崄杩涘埗杞簩杩涘埗鐨勫嚱鏁帮紝浼犲叆涓�涓崄杩涘埗鏁帮紝浠ヤ簩杩涘埗褰㈠紡杈撳嚭
 * void dec2bin(int n);
 */
 void dec2bin(int n)
@@ -13,7 +13,7 @@ void dec2bin(int n)
 		buf[i] = n % 2 + '0';
 		n /= 2;
 	}
-	//转成字符串也还要逆置
+	//杞垚瀛楃涓蹭篃杩樿閫嗙疆
 	printf("%s\n", buf);
 	*/
 	int i;

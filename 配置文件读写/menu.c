@@ -6,10 +6,10 @@
 void menu()
 {
 	printf("==================\n");
-	printf("*1 写配置文件\n");
-	printf("*2 读配置文件\n");
-	printf("*3 清屏\n");
-	printf("*4 退出\n");
+	printf("*1 鍐欓厤缃枃浠禱n");
+	printf("*2 璇婚厤缃枃浠禱n");
+	printf("*3 娓呭睆\n");
+	printf("*4 閫�鍑篭n");
 	printf("==================\n");
 
 }
@@ -30,7 +30,7 @@ void write_file()
 		printf("write_cfg_file err: %d\n", ret);
 		return;
 	}
-	printf("写入的内容：%s = %s\n", key, val);
+	printf("鍐欏叆鐨勫唴瀹癸細%s = %s\n", key, val);
 
 }
 
@@ -51,8 +51,8 @@ void read_file()
 	}
 	if (val == "\0")
 	{
-		printf("没有对应的key\n" );
+		printf("娌℃湁瀵瑰簲鐨刱ey\n" );
 	}
 	else
-		printf("读取的内容：%s = %s\n", key, val);
+		printf("璇诲彇鐨勫唴瀹癸細%s = %s\n", key, val);
 }

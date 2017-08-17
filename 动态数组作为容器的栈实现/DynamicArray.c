@@ -1,6 +1,6 @@
 #include "DynamicArray.h"
 
-//¶¯Ì¬Êı×éµÄ³õÊ¼»¯
+//åŠ¨æ€æ•°ç»„çš„åˆå§‹åŒ–
 DArray  Array_init()
 {
 	DynamicArray * dArray = calloc(1, sizeof(DynamicArray));
@@ -9,7 +9,7 @@ DArray  Array_init()
 	dArray->pArry = calloc(dArray->capacity, sizeof(void *));
 	return dArray;
 }
-//²åÈë
+//æ’å…¥
 void Array_insert(DArray darray, int pos, void * data)
 {
 	if (NULL == darray || NULL == data)
@@ -30,7 +30,7 @@ void Array_insert(DArray darray, int pos, void * data)
 	{
 		pos = dArray->size;
 	}
-	//pos´Ó0¿ªÊ¼¼ÆËã£¬ sizeÊÇÔªËØµÄ¸öÊı£¬ capacityÊÇ×î´óÄÜÈİÄÉÔªËØµÄ¸öÊı
+	//posä»0å¼€å§‹è®¡ç®—ï¼Œ sizeæ˜¯å…ƒç´ çš„ä¸ªæ•°ï¼Œ capacityæ˜¯æœ€å¤§èƒ½å®¹çº³å…ƒç´ çš„ä¸ªæ•°
 	for (int i = dArray->size - 1; i >= pos; i--)
 	{
 		dArray->pArry[i + 1] = dArray->pArry[i];
@@ -38,7 +38,7 @@ void Array_insert(DArray darray, int pos, void * data)
 	dArray->pArry[pos] = data;
 	dArray->size++;
 }
-//É¾³ı
+//åˆ é™¤
 void Array_delete(DArray darray, int pos)
 {
 	if (NULL == darray)
@@ -50,14 +50,14 @@ void Array_delete(DArray darray, int pos)
 	{
 		pos = dArray->size;
 	}
-	//dArray->size - 1ÊÇÊı×éµÄ×îºóÒ»¸öÔªËØ£¬É¾³ı×îºóÒ»¸öÔªËØÊÇÖ±½Ó½«Êı×é³¤¶È-1¼´¿É
+	//dArray->size - 1æ˜¯æ•°ç»„çš„æœ€åä¸€ä¸ªå…ƒç´ ï¼Œåˆ é™¤æœ€åä¸€ä¸ªå…ƒç´ æ˜¯ç›´æ¥å°†æ•°ç»„é•¿åº¦-1å³å¯
 	for (int i = pos; i < dArray->size - 1; i++)
 	{
 		dArray->pArry[i] = dArray->pArry[i + 1];
 	}
 	dArray->size--;
 }
-//±éÀú
+//éå†
 void Array_foreach(DArray darray, myforeach foreach)
 {
 	if (NULL == darray || NULL == foreach)
@@ -72,7 +72,7 @@ void Array_foreach(DArray darray, myforeach foreach)
 	}
 
 }
-//Ïú»Ù
+//é”€æ¯
 void Array_destory(DArray darray)
 {
 	if (NULL == darray)

@@ -1,5 +1,5 @@
 #include "SeqQueue.h"
-//Ë³Ğò¶ÓÁĞµÄ³õÊ¼»¯
+//é¡ºåºé˜Ÿåˆ—çš„åˆå§‹åŒ–
 int init_SqeQueue(SqeQueue * squeue)
 {
 	if (NULL == squeue)
@@ -7,7 +7,7 @@ int init_SqeQueue(SqeQueue * squeue)
 		return -1;
 	}
 	SQueue * queue = calloc(1, sizeof(SQueue));
-	if (NULL == queue)//ÄÚ´æ·ÖÅäÊ§°Ü
+	if (NULL == queue)//å†…å­˜åˆ†é…å¤±è´¥
 	{
 		return -2;
 	}
@@ -16,7 +16,7 @@ int init_SqeQueue(SqeQueue * squeue)
 	*squeue = queue;
 	return 0;
 }
-//Èë¶Ó
+//å…¥é˜Ÿ
 int push_SqeQueue(SqeQueue queue, void *data)
 {
 	if (NULL == queue)
@@ -36,7 +36,7 @@ int push_SqeQueue(SqeQueue queue, void *data)
 	sque->size++;
 	return 0;
 }
-//³ö¶Ó
+//å‡ºé˜Ÿ
 int pop_SqeQueue(SqeQueue queue)
 {
 	if (NULL == queue)
@@ -56,7 +56,7 @@ int pop_SqeQueue(SqeQueue queue)
 	return 0;
 
 }
-//»ñµÃ¶ÔÍ·ÔªËØ
+//è·å¾—å¯¹å¤´å…ƒç´ 
 void* fornt_SqeQueue(SqeQueue queue)
 {
 	if (NULL == queue)
@@ -66,7 +66,7 @@ void* fornt_SqeQueue(SqeQueue queue)
 	SQueue *sque = (SQueue *)queue;
 	return sque->data[0];
 }
-//»ñµÃ¶ÓÎ²ÔªËØ
+//è·å¾—é˜Ÿå°¾å…ƒç´ 
 void* back_SqeQueue(SqeQueue queue)
 {
 	if (NULL == queue)
@@ -76,7 +76,7 @@ void* back_SqeQueue(SqeQueue queue)
 	SQueue *sque = (SQueue *)queue;
 	return sque->data[sque->size - 1];
 }
-//»ñµÃ¶ÓÁĞ´óĞ¡
+//è·å¾—é˜Ÿåˆ—å¤§å°
 int size_SqeQueue(SqeQueue queue)
 {
 	if (NULL == queue)
@@ -86,7 +86,7 @@ int size_SqeQueue(SqeQueue queue)
 	SQueue *sque = (SQueue *)queue;
 	return sque->size;
 }
-//Ïú»Ù¶ÓÁĞ
+//é”€æ¯é˜Ÿåˆ—
 int destory_SqeQueue(SqeQueue queue)
 {
 	if (NULL == queue)

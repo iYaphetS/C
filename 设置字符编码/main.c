@@ -5,7 +5,7 @@
 
 int main()
 {
-	char buf[1024] = "¹þ¹þ";
+	char buf[1024] = "å“ˆå“ˆ";
 
 	printf("%d\n", strlen(buf));
 

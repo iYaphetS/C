@@ -1,5 +1,5 @@
 #include "LinkQueue.h"
-//Á´Ê½¶ÓÁĞµÄ³õÊ¼»¯
+//é“¾å¼é˜Ÿåˆ—çš„åˆå§‹åŒ–
 int init_LinkQueue(LinkQueue *lqueue)
 {
 	if (NULL == lqueue)
@@ -17,7 +17,7 @@ int init_LinkQueue(LinkQueue *lqueue)
 	*lqueue = queue;
 	return 0;
 }
-//Èë¶Ó
+//å…¥é˜Ÿ
 int push_LinkQueue(LinkQueue lqueue, void *data)
 {
 	if (NULL == lqueue)
@@ -36,7 +36,7 @@ int push_LinkQueue(LinkQueue lqueue, void *data)
 	queue->size++;
 	return 0;
 }
-//³ö¶Ó
+//å‡ºé˜Ÿ
 int pop_LinkQueue(LinkQueue lqueue)
 {
 	if (NULL == lqueue)
@@ -48,19 +48,19 @@ int pop_LinkQueue(LinkQueue lqueue)
 	{
 		return 0;
 	}
-	if (queue->size == 1)//µ±Ö»ÓĞÒ»¸ö½ÚµãµÄÊ±ºò£¬³ö¶Ó£¬»áµ¼ÖÂ¶ÓÎ²Ö¸Õë±ä»¯
+	if (queue->size == 1)//å½“åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹çš„æ—¶å€™ï¼Œå‡ºé˜Ÿï¼Œä¼šå¯¼è‡´é˜Ÿå°¾æŒ‡é’ˆå˜åŒ–
 	{
 		LNode *pDel = queue->head.next;
 		queue->rear = &queue->head;
 		queue->size--;
 	}
-	//µ±Ö»ÓĞÒ»¸ö½Úµã£¬¶ÓÎ²Ö¸ÕëÖ¸ÏòÕâ¸ö½Úµã£¬É¾³ıºó£¬¸Ã½Úµã²»´æÔÚ£¬Ö¸Ïò¾ÍÒª¸Ä±äÁË	
-	LNode *pDel = queue->head.next;//»º´æÒªÉ¾³ıµÄ½ÚµãµÄÏÂÒ»¸ö½Úµã
+	//å½“åªæœ‰ä¸€ä¸ªèŠ‚ç‚¹ï¼Œé˜Ÿå°¾æŒ‡é’ˆæŒ‡å‘è¿™ä¸ªèŠ‚ç‚¹ï¼Œåˆ é™¤åï¼Œè¯¥èŠ‚ç‚¹ä¸å­˜åœ¨ï¼ŒæŒ‡å‘å°±è¦æ”¹å˜äº†	
+	LNode *pDel = queue->head.next;//ç¼“å­˜è¦åˆ é™¤çš„èŠ‚ç‚¹çš„ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
 	queue->head.next = pDel->next;
 	queue->size--;
 
 }
-//»ñµÃ¶ÔÍ·ÔªËØ
+//è·å¾—å¯¹å¤´å…ƒç´ 
 LinkNode front_LinkQueue(LinkQueue lqueue)
 {
 	if (NULL == lqueue)
@@ -70,7 +70,7 @@ LinkNode front_LinkQueue(LinkQueue lqueue)
 	LQueue * queue = (LQueue *)lqueue;
 	return queue->head.next;
 }
-//»ñµÃ¶ÓÎ²ÔªËØ
+//è·å¾—é˜Ÿå°¾å…ƒç´ 
 LinkNode back_LinkQueue(LinkQueue lqueue)
 {
 	if (NULL == lqueue)
@@ -80,7 +80,7 @@ LinkNode back_LinkQueue(LinkQueue lqueue)
 	LQueue * queue = (LQueue *)lqueue;
 	return queue->rear;
 }
-//¶ÓµÄ´óĞ¡
+//é˜Ÿçš„å¤§å°
 int size_LinkQueue(LinkQueue lqueue)
 {
 	if (NULL == lqueue)
@@ -90,7 +90,7 @@ int size_LinkQueue(LinkQueue lqueue)
 	LQueue * queue = (LQueue *)lqueue;
 	return queue->size;
 }
-//¶ÓµÄÏú»Ù
+//é˜Ÿçš„é”€æ¯
 int destory_LinkQueue(LinkQueue lqueue)
 {
 	if (NULL == lqueue)

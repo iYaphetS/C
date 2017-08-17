@@ -15,13 +15,13 @@ pNode SListCreat()
 	phead = (pNode)malloc(sizeof(Node));
 	if (phead == NULL)
 		return NULL;
-	pNode pCur = phead;//ÓÉÓÚÍ·½ÚµãÊÇ²»¶¯µÄ£¬pCurÖ»ÊÇÒ»¸ö¸¨ÖúµÄ½ÚµãÖ¸Õë±äÁ¿
+	pNode pCur = phead;//ç”±äºå¤´èŠ‚ç‚¹æ˜¯ä¸åŠ¨çš„ï¼ŒpCuråªæ˜¯ä¸€ä¸ªè¾…åŠ©çš„èŠ‚ç‚¹æŒ‡é’ˆå˜é‡
 	pNode pNew = NULL;
 	int num = 0;
 
 	while (1)
 	{
-		printf("ÇëÊäÈëÊı¾İ£º");
+		printf("è¯·è¾“å…¥æ•°æ®ï¼š");
 		scanf("%d", &num);
 		if (num < 0)
 			break;
@@ -30,9 +30,9 @@ pNode SListCreat()
 			break;
 		pNew->data = num;
 		
-		//Ç§Íò²»ÒªÕâÑùĞ´pNew = pCur->next;
-		//±¾À´pNew·ÖÅäÁË¶Ñ¿Õ¼ä£¬ÕâÑù¸Ä±äpNewÖ¸Ïò£¬³ÉÁËÒ»¸öÒ°Ö¸Õë
-		pCur->next = pNew;//½¨Á¢pcurºÍpnewÖ®¼äµÄ¹ØÏµ
+		//åƒä¸‡ä¸è¦è¿™æ ·å†™pNew = pCur->next;
+		//æœ¬æ¥pNewåˆ†é…äº†å †ç©ºé—´ï¼Œè¿™æ ·æ”¹å˜pNewæŒ‡å‘ï¼Œæˆäº†ä¸€ä¸ªé‡æŒ‡é’ˆ
+		pCur->next = pNew;//å»ºç«‹pcurå’Œpnewä¹‹é—´çš„å…³ç³»
 		pNew->next = NULL;
 		pCur = pNew;
 
@@ -56,7 +56,7 @@ int SListPrint(pNode phead)
 
 	return 0;
 }
-//ÔÚÊı¾İµÈÓÚxµÄµÚÒ»¸ö½ÚµãÇ°Ãæ²åÈëÒ»¸öÊı¾İÎªyµÄ½Úµã,Èç¹ûÃ»ÓĞ¾ÍÔÚÎ²²¿²åÈë
+//åœ¨æ•°æ®ç­‰äºxçš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹å‰é¢æ’å…¥ä¸€ä¸ªæ•°æ®ä¸ºyçš„èŠ‚ç‚¹,å¦‚æœæ²¡æœ‰å°±åœ¨å°¾éƒ¨æ’å…¥
 int SListNodeInsert(pNode phead, int x, int y)
 {
 	if (phead == NULL)
@@ -72,7 +72,7 @@ int SListNodeInsert(pNode phead, int x, int y)
 	{
 		if (pCur->data == x)			
 			break;
-		pPre = pPre->next;//Ö¸Ïò¸Ä±ä£¬ÏòÏÂÒ»¸ö½ÚµãÒÆ¶¯
+		pPre = pPre->next;//æŒ‡å‘æ”¹å˜ï¼Œå‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ç§»åŠ¨
 		pCur = pCur->next;
 	}
 		
@@ -82,7 +82,7 @@ int SListNodeInsert(pNode phead, int x, int y)
 
 	return 0;
 }
-//*********ÓÃÒ»ÖÖºó²å·¨ÊµÏÖÔªËØµÄÇ°²åºÍºó²å
+//*********ç”¨ä¸€ç§åæ’æ³•å®ç°å…ƒç´ çš„å‰æ’å’Œåæ’
 int SListNodeInsert_pro(pNode phead, int x, int y)
 {
 	if (phead == NULL)
@@ -98,14 +98,14 @@ int SListNodeInsert_pro(pNode phead, int x, int y)
 	{
 		if (pCur->data == x)
 			break;
-		pPre = pPre->next;//Ö¸Ïò¸Ä±ä£¬ÏòÏÂÒ»¸ö½ÚµãÒÆ¶¯
+		pPre = pPre->next;//æŒ‡å‘æ”¹å˜ï¼Œå‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹ç§»åŠ¨
 		pCur = pCur->next;
 	}
 
 	pNew->data = y;
 	pNew->next = pCur->next;
 	pCur->next = pNew;
-	//Ç°²åÔªËØ£¬½»»»Êı¾İ£¨Ïàµ±ÓÚ½»»»ÁËµ±Ç°½ÚµãÓëĞÂ½Úµã£©£¬ºó²åÊı¾İ¾Í²»ÓÃ½»»»Êı¾İ
+	//å‰æ’å…ƒç´ ï¼Œäº¤æ¢æ•°æ®ï¼ˆç›¸å½“äºäº¤æ¢äº†å½“å‰èŠ‚ç‚¹ä¸æ–°èŠ‚ç‚¹ï¼‰ï¼Œåæ’æ•°æ®å°±ä¸ç”¨äº¤æ¢æ•°æ®
 	int temp = pNew->data;
 	pNew->data = pCur->data;
 	pCur->data = temp;
@@ -113,7 +113,7 @@ int SListNodeInsert_pro(pNode phead, int x, int y)
 	return 0;
 }
 
-//É¾³ıÊı¾İÎªxµÄµÚÒ»¸ö½Úµã
+//åˆ é™¤æ•°æ®ä¸ºxçš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
 int SListNodeDel(pNode phead, int x)
 {
 	if (phead == NULL)
@@ -135,11 +135,11 @@ int SListNodeDel(pNode phead, int x)
 	}
 	if (flag == 0)
 	{
-		printf("Ã»ÓĞÕÒµ½ÖµÎª%dµÄ½Úµã\n", x);
+		printf("æ²¡æœ‰æ‰¾åˆ°å€¼ä¸º%dçš„èŠ‚ç‚¹\n", x);
 	}
 	return 0;
 }
-//É¾³ıÔªËØµÄÁíÒ»ÖÖ·½·¨
+//åˆ é™¤å…ƒç´ çš„å¦ä¸€ç§æ–¹æ³•
 int SListNodeDel_pro(pNode phead, int x)
 {
 	if (phead == NULL)
@@ -152,9 +152,9 @@ int SListNodeDel_pro(pNode phead, int x)
 		if (pCur->data == x)
 		{
 			pNode t = pCur->next;
-			pCur->data = pCur->next->data;//ÒªÉ¾³ıµÄ½ÚµãpCurÓëpCurÏÂÒ»¸ö½Úµã½»»»
+			pCur->data = pCur->next->data;//è¦åˆ é™¤çš„èŠ‚ç‚¹pCurä¸pCurä¸‹ä¸€ä¸ªèŠ‚ç‚¹äº¤æ¢
 			pCur->next = t->next;
-			free(t);//É¾³ıtÏàµ±ÓÚÉ¾³ıpCur
+			free(t);//åˆ é™¤tç›¸å½“äºåˆ é™¤pCur
 			flag = 1;
 			break;
 		}
@@ -163,12 +163,12 @@ int SListNodeDel_pro(pNode phead, int x)
 	}
 	if (flag == 0)
 	{
-		printf("Ã»ÓĞÕÒµ½ÖµÎª%dµÄ½Úµã\n", x);
+		printf("æ²¡æœ‰æ‰¾åˆ°å€¼ä¸º%dçš„èŠ‚ç‚¹\n", x);
 	}
 	return 0;
 }
 
-//É¾³ıËùÓĞÊı¾İµÈÓÚxµÄ½Úµã
+//åˆ é™¤æ‰€æœ‰æ•°æ®ç­‰äºxçš„èŠ‚ç‚¹
 int SListNodeDel_(pNode phead, int x)
 {
 	if (phead == NULL)
@@ -191,18 +191,18 @@ int SListNodeDel_(pNode phead, int x)
 	}
 	if (flag == 0)
 	{
-		printf("Ã»ÓĞÕÒµ½ÖµÎª%dµÄ½Úµã\n", x);
+		printf("æ²¡æœ‰æ‰¾åˆ°å€¼ä¸º%dçš„èŠ‚ç‚¹\n", x);
 	}
 	return 0;
 }
 
-//ÅÅĞò-----ÉıĞò----Ñ¡ÔñÅÅĞò
+//æ’åº-----å‡åº----é€‰æ‹©æ’åº
 /*
 for(int i = 0; i < n -1; i++)
 {
 	for(int j = i + 1; j < n; j++)
 	{
-		//½»»»
+		//äº¤æ¢
 	}
 }
 */
@@ -214,7 +214,7 @@ int SListNodeSort(pNode phead)
 
 	for (p = phead->next; p->next != NULL; p = p->next)
 	{
-		for (q = p->next; q!= NULL; q = q->next)//µÚÒ»´ÎÄÜÑ­»·µ½µ¹ÊıµÚÒ»¸ö½Úµã
+		for (q = p->next; q!= NULL; q = q->next)//ç¬¬ä¸€æ¬¡èƒ½å¾ªç¯åˆ°å€’æ•°ç¬¬ä¸€ä¸ªèŠ‚ç‚¹
 		{
 			if (p->data > q->data)
 			{
@@ -228,12 +228,12 @@ int SListNodeSort(pNode phead)
 	}
 	return 0;
 }
-//Á´±íÅÅĞò---ÉıĞò---Ã°ÅİÅÅĞò
+//é“¾è¡¨æ’åº---å‡åº---å†’æ³¡æ’åº
 /*for (int i = 0; i < n - 1; i++)
 {
 	for (int j = 0; j < n - i - 1; j++)
 	{
-		//½»»»
+		//äº¤æ¢
 	}
 }*/
 int SListNodeSort_(pNode phead)
@@ -241,19 +241,19 @@ int SListNodeSort_(pNode phead)
 	if (phead == NULL && phead->next == NULL && phead->next->next == NULL)
 		return -1;
 	pNode p, q;
-	pNode pTail;//Î²Ö¸Õë
+	pNode pTail;//å°¾æŒ‡é’ˆ
 	for (p = phead->next; p->next != NULL; p = p->next);
 	pTail = p;
 
 	for (p = phead->next; p->next != NULL; p = p->next)
 	{
-		for (q = phead->next; q != pTail; q = q->next)//µÚÒ»´Î×î´óÄÜÑ­»·µ½µ¹ÊıµÚ¶ş¸ö½Úµã£¬µ¹ÊıµÚÒ»¸öÎªptail
+		for (q = phead->next; q != pTail; q = q->next)//ç¬¬ä¸€æ¬¡æœ€å¤§èƒ½å¾ªç¯åˆ°å€’æ•°ç¬¬äºŒä¸ªèŠ‚ç‚¹ï¼Œå€’æ•°ç¬¬ä¸€ä¸ªä¸ºptail
 		{
 			pNode t = q->next;
-			if (q->data > t->data)//Èç¹û²»½èÖú½ÚµãÖ¸Õët£¬q->next->data====qµÄÏÂÒ»¸ö½Úµã->data
+			if (q->data > t->data)//å¦‚æœä¸å€ŸåŠ©èŠ‚ç‚¹æŒ‡é’ˆtï¼Œq->next->data====qçš„ä¸‹ä¸€ä¸ªèŠ‚ç‚¹->data
 			{
 				//printf("%d\n", q->next->data);
-				//ÕâÊÇÖ»ÓĞÒ»¸öÊı¾İÇé¿ö£¬Èç¹û¶à¸öÊı¾İ£¬¾ÍÒª½ÚµãÕûÌå½»»»£¬ÔÙÖ¸ÕëÓò½»»»£¬»òÕß½«¶à¸öÊı¾İ·â×°³É½á¹¹Ìå£¬½á¹¹Ìå½»»»
+				//è¿™æ˜¯åªæœ‰ä¸€ä¸ªæ•°æ®æƒ…å†µï¼Œå¦‚æœå¤šä¸ªæ•°æ®ï¼Œå°±è¦èŠ‚ç‚¹æ•´ä½“äº¤æ¢ï¼Œå†æŒ‡é’ˆåŸŸäº¤æ¢ï¼Œæˆ–è€…å°†å¤šä¸ªæ•°æ®å°è£…æˆç»“æ„ä½“ï¼Œç»“æ„ä½“äº¤æ¢
 				int temp = q->data;
 				q->data = t->data;
 				t->data = temp;
@@ -286,8 +286,8 @@ int SListNodeReverse(pNode phead)
 
 	return 0;
 }
-//¼ÙÈçÔ­À´Á´±íÊÇÉıĞòµÄ,ÉıĞò²åÈëĞÂ½Úµã
-//²»ÄÜ²åÈë½ÚµãºóÔÙÅÅĞò£¬ÊÇÉıĞò²åÈëĞÂ½Úµãx
+//å‡å¦‚åŸæ¥é“¾è¡¨æ˜¯å‡åºçš„,å‡åºæ’å…¥æ–°èŠ‚ç‚¹
+//ä¸èƒ½æ’å…¥èŠ‚ç‚¹åå†æ’åºï¼Œæ˜¯å‡åºæ’å…¥æ–°èŠ‚ç‚¹x
 int SListNodeInsertPro(pNode phead, int x)
 {
 	if (phead == NULL)
@@ -335,32 +335,32 @@ int main()
 	phead = SListCreat();
 
 
-	printf("\nÁ´±í±éÀú£º\n");
+	printf("\né“¾è¡¨éå†ï¼š\n");
 	SListPrint(phead);
 
 	SListNodeInsert(phead, 4, 9);
-	printf("\nÔÚÖµÎª%d½ÚµãÇ°²åÈëÖµÎª%d½ÚµãºóÁ´±í±éÀú£º\n", 4, 9);
+	printf("\nåœ¨å€¼ä¸º%dèŠ‚ç‚¹å‰æ’å…¥å€¼ä¸º%dèŠ‚ç‚¹åé“¾è¡¨éå†ï¼š\n", 4, 9);
 	SListPrint(phead);
 
 	SListNodeDel(phead, 3);
-	printf("\nÉ¾³ıÖµÎª%dµÄµÚÒ»¸ö½ÚµãºóÁ´±í±éÀú£º\n", 3);
+	printf("\nåˆ é™¤å€¼ä¸º%dçš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹åé“¾è¡¨éå†ï¼š\n", 3);
 	SListPrint(phead);
 
 	SListNodeDel_(phead, 5);
-	printf("\nÉ¾³ıÖµÎª%dµÄËùÓĞ½ÚµãºóÁ´±í±éÀú£º\n", 5);
+	printf("\nåˆ é™¤å€¼ä¸º%dçš„æ‰€æœ‰èŠ‚ç‚¹åé“¾è¡¨éå†ï¼š\n", 5);
 	SListPrint(phead);
 
 	SListNodeSort_(phead);
-	printf("\nÉıĞòÅÅĞòµÄ½á¹û£º\n");
+	printf("\nå‡åºæ’åºçš„ç»“æœï¼š\n");
 	SListPrint(phead);
 
 	SListNodeReverse(phead);
-	printf("\nÄæÖÃµÄ½á¹û£º\n");
+	printf("\né€†ç½®çš„ç»“æœï¼š\n");
 	SListPrint(phead);
 
 	SListNodeSort_(phead);
 	SListNodeInsertPro(phead, 6);
-	printf("\nÔÚÒÑ¾­ÉıĞòµÄÁ´±íÖĞ²åÈëÔªËØ%dµÄ½á¹û£º\n", 6);
+	printf("\nåœ¨å·²ç»å‡åºçš„é“¾è¡¨ä¸­æ’å…¥å…ƒç´ %dçš„ç»“æœï¼š\n", 6);
 	SListPrint(phead);
 
 	SListNodeDestroy(phead);

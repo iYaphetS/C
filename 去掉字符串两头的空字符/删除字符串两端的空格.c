@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #pragma warning(disable:4996)
-//编写一个函数。其参数为一个字符串，函数删除字符串中的空格
+//缂栧啓涓�涓嚱鏁般�傚叾鍙傛暟涓轰竴涓瓧绗︿覆锛屽嚱鏁板垹闄ゅ瓧绗︿覆涓殑绌烘牸
 
 void deleteSpace1(char *buf)
 {

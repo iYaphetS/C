@@ -1,8 +1,8 @@
 #pragma once
 
-//Í¨ĞÅ±¨ÎÄ¼Ó½âÃÜµÄ½á¹¹Ìå¶¨Òå
+//é€šä¿¡æŠ¥æ–‡åŠ è§£å¯†çš„ç»“æ„ä½“å®šä¹‰
 
-//¼Ó½âÃÜº¯ÊıÀàĞÍ¶¨Òå
+//åŠ è§£å¯†å‡½æ•°ç±»å‹å®šä¹‰
 typedef int(*PENCFILE)(unsigned char *src, int src_len, unsigned char *dest, int *dest_len);
 
 typedef int(*PDESFILE)(unsigned char *src, int src_len, unsigned char *dest, int *dest_len);
@@ -14,5 +14,5 @@ typedef struct CEncDesProtocol
 
 }CEncDesProtocol;
 
-//Í¨ĞÅ±¨³õÊ¼»¯¼Ó½âÃÜ½á¹¹Ìå³õÊ¼»¯ÉùÃ÷
+//é€šä¿¡æŠ¥åˆå§‹åŒ–åŠ è§£å¯†ç»“æ„ä½“åˆå§‹åŒ–å£°æ˜
 void setED(CEncDesProtocol *ED, PENCFILE enc, PDESFILE des);

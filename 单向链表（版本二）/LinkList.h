@@ -1,20 +1,20 @@
 #pragma once 
 
 #include <stdlib.h>
-//Á´±í½ÚµãµÄĞÅÏ¢
+//é“¾è¡¨èŠ‚ç‚¹çš„ä¿¡æ¯
 typedef struct LinkNode
 {
 	struct LinkNode *next;
 }LinkNode;
 
-//Á´±íµÄĞÅÏ¢
+//é“¾è¡¨çš„ä¿¡æ¯
 typedef struct LinkList
 {
 	LinkNode head;
 	int size;
 }LinkList;
 
-//¿É¶Ôlinklist½øĞĞÊı¾İ±£ÃÜ·â×° typedef void * LinkList
+//å¯å¯¹linklistè¿›è¡Œæ•°æ®ä¿å¯†å°è£… typedef void * LinkList
 #ifdef __cplusplus
 extern "C" {
 #endif

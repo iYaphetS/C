@@ -5,10 +5,10 @@ int main()
 {
 	char s[100] = {0};
 
-	char * str = gets(s);//不能输入带有回车的字符串
+	char * str = gets(s);//涓嶈兘杈撳叆甯︽湁鍥炶溅鐨勫瓧绗︿覆
 
 	puts(s);
-	puts(str);//返回值也是存放到栈中的字符串是一样的
+	puts(str);//杩斿洖鍊间篃鏄瓨鏀惧埌鏍堜腑鐨勫瓧绗︿覆鏄竴鏍风殑
 
 
 	return 0;

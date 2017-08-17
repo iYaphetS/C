@@ -5,22 +5,22 @@
 
 
 /*
-¹¦ÄÜ£º
-1¡¢°ÑÖ¸ÕëÊý×ép1µÄ×Ö·û´®È¡³öÀ´£¬
-2¡¢°Ñ¶þÎ¬Êý×ébuf2µÄ×Ö·ûÈ¡³öÀ´£¬
-3¡¢ÉÏÃæµÄ×Ö·û´®·ÅÔÚ p3£¬p3 ÊÇÔÚ¶ÑÇøÖ¸ÕëÊý×é(Ã¿¸öÔªËØÍ¬Ê±ÓÖÖ¸Ïò¶ÑÇø)
-4¡¢¶Ô p3 ÖÐ×Ö·û´®½øÐÐÅÅÐò£¬Í¨¹ý strcmp() ½øÐÐÅÅÐò
-²ÎÊý£º
-p1£º Ö¸ÕëÊý×éÊ×µØÖ·£¬char *p1[] = {"aa", "ccccccc", "bbbbbb"};
-len1£ºp1ÔªËØ¸öÊý
-buf2£º¶þÎ¬Êý×éÊ×ÔªËØµØÖ·£¬char buf2[][30] = {"111111", "3333333", "222222"};
-len2£ºbuf2×Ö·û´®µÄÐÐÊý
-p3£º¶þ¼¶Ö¸ÕëµÄµØÖ·£¬ÐèÒªÔÚº¯ÊýÄÚ·ÖÅä¶ÑÇøÖ¸ÕëÊý×é£¬±£´æp1ºÍbuf2µÄ×Ö·û´®£¬»¹ÐèÒªÅÅÐò
-len3£º±£´æp3ÖÐµÄ×Ö·û´®¸öÊý
-·µ»ØÖµ£º³É¹¦Îª0£¬ Ê§°ÜÎª¸ºÊý
+åŠŸèƒ½ï¼š
+1ã€æŠŠæŒ‡é’ˆæ•°ç»„p1çš„å­—ç¬¦ä¸²å–å‡ºæ¥ï¼Œ
+2ã€æŠŠäºŒç»´æ•°ç»„buf2çš„å­—ç¬¦å–å‡ºæ¥ï¼Œ
+3ã€ä¸Šé¢çš„å­—ç¬¦ä¸²æ”¾åœ¨ p3ï¼Œp3 æ˜¯åœ¨å †åŒºæŒ‡é’ˆæ•°ç»„(æ¯ä¸ªå…ƒç´ åŒæ—¶åˆæŒ‡å‘å †åŒº)
+4ã€å¯¹ p3 ä¸­å­—ç¬¦ä¸²è¿›è¡ŒæŽ’åºï¼Œé€šè¿‡ strcmp() è¿›è¡ŒæŽ’åº
+å‚æ•°ï¼š
+p1ï¼š æŒ‡é’ˆæ•°ç»„é¦–åœ°å€ï¼Œchar *p1[] = {"aa", "ccccccc", "bbbbbb"};
+len1ï¼šp1å…ƒç´ ä¸ªæ•°
+buf2ï¼šäºŒç»´æ•°ç»„é¦–å…ƒç´ åœ°å€ï¼Œchar buf2[][30] = {"111111", "3333333", "222222"};
+len2ï¼šbuf2å­—ç¬¦ä¸²çš„è¡Œæ•°
+p3ï¼šäºŒçº§æŒ‡é’ˆçš„åœ°å€ï¼Œéœ€è¦åœ¨å‡½æ•°å†…åˆ†é…å †åŒºæŒ‡é’ˆæ•°ç»„ï¼Œä¿å­˜p1å’Œbuf2çš„å­—ç¬¦ä¸²ï¼Œè¿˜éœ€è¦æŽ’åº
+len3ï¼šä¿å­˜p3ä¸­çš„å­—ç¬¦ä¸²ä¸ªæ•°
+è¿”å›žå€¼ï¼šæˆåŠŸä¸º0ï¼Œ å¤±è´¥ä¸ºè´Ÿæ•°
 */
 
-//×öº¯Êý²ÎÊý£ºÖ¸ÕëÊý×é----ÍË»¯Îª¶þ¼¶Ö¸Õë£¬¶þÎ¬Êý×éÍË»¯ÎªÊý×éÖ¸Õë£¬
+//åšå‡½æ•°å‚æ•°ï¼šæŒ‡é’ˆæ•°ç»„----é€€åŒ–ä¸ºäºŒçº§æŒ‡é’ˆï¼ŒäºŒç»´æ•°ç»„é€€åŒ–ä¸ºæ•°ç»„æŒ‡é’ˆï¼Œ
 int arr_sort(char **array1, int num1,char(*array2)[30], int num2,
 	char ***myp3 /*out*/, int *num3)
 {
@@ -28,7 +28,7 @@ int arr_sort(char **array1, int num1,char(*array2)[30], int num2,
 		return -1;
 	int n = num1 + num2;
 	char **temp = *myp3;
-	//ÎªÖ¸Ïò¡¶Ö¸ÕëÊý×é¡·µÄÖ¸ÕëtempÔÚ¶ÑÖÐ·ÖÅän¸öÖ¸ÕëÊý¾Ý¿Õ¼ä
+	//ä¸ºæŒ‡å‘ã€ŠæŒ‡é’ˆæ•°ç»„ã€‹çš„æŒ‡é’ˆtempåœ¨å †ä¸­åˆ†é…nä¸ªæŒ‡é’ˆæ•°æ®ç©ºé—´
 	temp = (char **)calloc(n, sizeof(char *));
 	if (temp == NULL)
 		return -2;
@@ -38,7 +38,7 @@ int arr_sort(char **array1, int num1,char(*array2)[30], int num2,
 		for (j = 0; j < num1; j++, i++)
 		{
 			int len = strlen(array1[j]);
-			//¸ù¾Ý×Ö·û´®µÄ´óÐ¡Îª¡¶Ö¸ÕëÊý×é¡·³ÉÔ±Ö¸Õë±äÁ¿ÔÚ¶ÑÖÐ·ÖÅä×Ö·û¿Õ¼ä
+			//æ ¹æ®å­—ç¬¦ä¸²çš„å¤§å°ä¸ºã€ŠæŒ‡é’ˆæ•°ç»„ã€‹æˆå‘˜æŒ‡é’ˆå˜é‡åœ¨å †ä¸­åˆ†é…å­—ç¬¦ç©ºé—´
 			temp[i] = (char *)calloc(len + 1, sizeof(char));
 			if (temp[i] == NULL)
 				return -3;
@@ -60,7 +60,7 @@ int arr_sort(char **array1, int num1,char(*array2)[30], int num2,
 		printf("p3[%d] = %s\n", i, temp[i]);
 	}
 	*/
-	//½«×Ö·û´®ÅÅÐò
+	//å°†å­—ç¬¦ä¸²æŽ’åº
 	for (i = 0; i < n - 1; i++)
 	{
 		for (j = 0; j < n -i - 1; j++)
@@ -126,12 +126,12 @@ int  main()
 		return ret;
 	}
 
-	//´òÓ¡ÄÚÈÝ
+	//æ‰“å°å†…å®¹
 	printBuf(p3, len3);
 
-	//ÊÍ·Åp3ËùÖ¸ÏòÄÚ´æ
-	//ÔÚº¯ÊýÄÚ²¿°Ñp3µÄÖµ¸³ÖµÎªNULL
-	//len3£º±£´æp3ÖÐµÄ×Ö·û´®¸öÊý
+	//é‡Šæ”¾p3æ‰€æŒ‡å‘å†…å­˜
+	//åœ¨å‡½æ•°å†…éƒ¨æŠŠp3çš„å€¼èµ‹å€¼ä¸ºNULL
+	//len3ï¼šä¿å­˜p3ä¸­çš„å­—ç¬¦ä¸²ä¸ªæ•°
 	free_buf(&p3, len3);
 
 	return 0;

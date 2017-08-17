@@ -1,25 +1,25 @@
 #include <stdio.h>
 
 /*
-��ʱ������������ģ�
-��һ����ճԵ���������һ���һ�����ڶ����ֽ�ʣ�µ����ӳԵ�һ���һ�����Ժ�ÿ��Ե�ǰһ��ʣ�µ�һ���һ����
-����n��׼���Ե�ʱ��ֻʣ��һ�����ӡ�
-�������㣬��������һ�£�����һ�쿪ʼ�Ե�ʱ������һ���ж��ٸ��أ�
+当时的情况是这样的：
+第一天悟空吃掉桃子总数一半多一个，第二天又将剩下的桃子吃掉一半多一个，以后每天吃掉前一天剩下的一半多一个，
+到第n天准备吃的时候只剩下一个桃子。
+聪明的你，请帮悟空算一下，他第一天开始吃的时候桃子一共有多少个呢？
 */
-//�ڼ���	1    2    3	  4    ...   n
-//		���                      1
+//第几天	1    2    3	  4    ...   n
+//		最多                      1
 //day	n    n-1  n-2  n-3        1
-int calc_peach(int n)//day n  -----��һ��   day  n-1 �ڶ���
+int calc_peach(int n)//day n  -----第一天   day  n-1 第二天
 {
 	
-	if (n == 1)//���һ��
+	if (n == 1)//最后一天
 		return 1;
 	else
-		//��calc_peach(n) = (calc_peach(n - 1) + 1) * 2----��һ���ܸ���
+		//求calc_peach(n) = (calc_peach(n - 1) + 1) * 2----第一天总个数
 		return (calc_peach(n - 1) + 1) * 2;
 }
 
-//�׳�
+//阶乘
 int factorial(int n)
 {
 	if (n == 1)

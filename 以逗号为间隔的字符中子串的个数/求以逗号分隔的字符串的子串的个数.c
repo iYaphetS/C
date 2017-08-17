@@ -5,22 +5,22 @@
 #pragma warning(disable:4996)
 
 /*
-ÓĞÒ»¸ö×Ö·û´®·ûºÏÒÔÏÂÌØÕ÷ "abcdef,acccd,eeee,aaaa,e3eeee,ssss,"
-a) ÒÔ¶ººÅ,¸ô¿ª×Ö´®£¬×Ö´®ÊıÁ¿²»»á³¬¹ı10¸ö£¬Ã¿¸ö×Ö´®³¤¶È²»»á³¬¹ı30
-b) ÒÔ¶ººÅ·Ö¸ô×Ö·û´®£¬²¢°Ñ½á¹û´«³ö
-c)²Î¿¼¿âº¯Êı£ºstrchr(), strncpy(), strcpy(), strlen()
-²»ÄÜÊ¹ÓÃstrtok()
+æœ‰ä¸€ä¸ªå­—ç¬¦ä¸²ç¬¦åˆä»¥ä¸‹ç‰¹å¾ "abcdef,acccd,eeee,aaaa,e3eeee,ssss,"
+a) ä»¥é€—å·,éš”å¼€å­—ä¸²ï¼Œå­—ä¸²æ•°é‡ä¸ä¼šè¶…è¿‡10ä¸ªï¼Œæ¯ä¸ªå­—ä¸²é•¿åº¦ä¸ä¼šè¶…è¿‡30
+b) ä»¥é€—å·åˆ†éš”å­—ç¬¦ä¸²ï¼Œå¹¶æŠŠç»“æœä¼ å‡º
+c)å‚è€ƒåº“å‡½æ•°ï¼šstrchr(), strncpy(), strcpy(), strlen()
+ä¸èƒ½ä½¿ç”¨strtok()
 */
 /*
-¹¦ÄÜ£º°Ñ "abcdef,acccd,eeee,aaaa,e3eeee,ssss,"£¬ÒÔ","·Ö¸ô³ö×Ö·û´®£¬·ÖÅä·ÅÔÚ¶şÎ¬Êı×ébufÖĞ
-²ÎÊı£º
-str£º	Ô­×Ö·û´®£¬"abcdef,acccd,eeee,aaaa,e3eeee,ssss,"
-c£º	 	·Ö¸ô±êÖ¾£º','
-buf: 	Ö¸ÕëÊı×éÊ×ÔªËØµØÖ·£¬Æä¿Õ¼äÔÚÖ÷µ÷º¯Êı·ÖÅä
-count£º±£´æbuf×Ö·û´®µÄ¸öÊı
-·µ»ØÖµ£º
-³É¹¦£º0
-Ê§°Ü£º·Ç0
+åŠŸèƒ½ï¼šæŠŠ "abcdef,acccd,eeee,aaaa,e3eeee,ssss,"ï¼Œä»¥","åˆ†éš”å‡ºå­—ç¬¦ä¸²ï¼Œåˆ†é…æ”¾åœ¨äºŒç»´æ•°ç»„bufä¸­
+å‚æ•°ï¼š
+strï¼š	åŸå­—ç¬¦ä¸²ï¼Œ"abcdef,acccd,eeee,aaaa,e3eeee,ssss,"
+cï¼š	 	åˆ†éš”æ ‡å¿—ï¼š','
+buf: 	æŒ‡é’ˆæ•°ç»„é¦–å…ƒç´ åœ°å€ï¼Œå…¶ç©ºé—´åœ¨ä¸»è°ƒå‡½æ•°åˆ†é…
+countï¼šä¿å­˜bufå­—ç¬¦ä¸²çš„ä¸ªæ•°
+è¿”å›å€¼ï¼š
+æˆåŠŸï¼š0
+å¤±è´¥ï¼šé0
 */
 int spitString(const char *str, char c, char **buf, int *count)
 {
@@ -28,12 +28,12 @@ int spitString(const char *str, char c, char **buf, int *count)
 	//"abcdef,acccd,eeee,aaaa,e3eeee,ssss,"
 	while (*str)
 	{
-		const char *temp = str;//±£´æ×Ó´®ÖĞ¿ªÊ¼µÄÎ»ÖÃ
+		const char *temp = str;//ä¿å­˜å­ä¸²ä¸­å¼€å§‹çš„ä½ç½®
 		while (*str != ',')
 			str++;
 		strncpy(buf[index], temp, str - temp);
-		str++;//Ìø¹ı¶ººÅ
-		while (isspace(*str))//Ìø¹ı¿Õ¸ñ
+		str++;//è·³è¿‡é€—å·
+		while (isspace(*str))//è·³è¿‡ç©ºæ ¼
 			str++;
 		index++;
 	}
@@ -48,20 +48,20 @@ void print_buf(char **buf, int count)
 		printf("%s\n", buf[i]);
 	}
 }
-//·ÖÅäÄÚ´æ
+//åˆ†é…å†…å­˜
 void getMem(char ***s, int n)
 {
 	char **buf = *s;
 	buf = calloc(n, sizeof(char *));
 	int i;
-	//Õ»ÖĞµÄÖ¸ÕëÊı×é10¸öÖ¸Õë±äÁ¿Ö¸Ïò¶Ñ¿Õ¼ä
+	//æ ˆä¸­çš„æŒ‡é’ˆæ•°ç»„10ä¸ªæŒ‡é’ˆå˜é‡æŒ‡å‘å †ç©ºé—´
 	for (i = 0; i < n; i++)
 	{
 		buf[i] = (char *)calloc(30, sizeof(char));
 	}
 	*s = buf;
 }
-//ÊÍ·ÅÄÚ´æ
+//é‡Šæ”¾å†…å­˜
 void freeMem(char ***s, int count)
 {
 	char **buf = *s;

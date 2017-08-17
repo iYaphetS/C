@@ -11,11 +11,11 @@ typedef struct tech_info
     char name[64];
     int age;
 }tinfo;
-void write_file()//Ôö
+void write_file()//å¢
 {
     FILE *fp = fopen("m.txt", "a");
 
-    tinfo t = {0};//½á¹¹Ìå»º³åÇø
+    tinfo t = {0};//ç»“æ„ä½“ç¼“å†²åŒº
     printf("please input num of tec:");
     int num = 0;
     scanf("%d", &num);
@@ -25,13 +25,13 @@ void write_file()//Ôö
         printf("please input tecinfo:");
         scanf("%s %d", t.name, &t.age);
 
-        fprintf(fp, "ĞÕÃû=%s,ÄêÁä=%d\n", t.name, t.age);
+        fprintf(fp, "å§“å=%s,å¹´é¾„=%d\n", t.name, t.age);
     }
 
     fclose(fp);
 }
 
-void read_file()//²éÀÏÊ¦ĞÅÏ¢£¬²¢ÕÒµ½ÄêÁäµÚ¶ş´óµÄÀÏÊ¦
+void read_file()//æŸ¥è€å¸ˆä¿¡æ¯ï¼Œå¹¶æ‰¾åˆ°å¹´é¾„ç¬¬äºŒå¤§çš„è€å¸ˆ
 {
     FILE *fp = fopen("m.txt", "r");
 
@@ -54,11 +54,11 @@ void read_file()//²éÀÏÊ¦ĞÅÏ¢£¬²¢ÕÒµ½ÄêÁäµÚ¶ş´óµÄÀÏÊ¦
         sscanf(buf, "%*[^=]=%[^,]%*[^=]=%[^\n]", tname, tage);
         if(strncmp(name, "all", 3) == 0)
         {
-            printf("ĞÕÃû=%s,ÄêÁä=%s\n", tname, tage);
+            printf("å§“å=%s,å¹´é¾„=%s\n", tname, tage);
         }
         else if(strcmp(name, tname) == 0)
         {
-            printf("ĞÕÃû=%s,ÄêÁä=%s\n", tname, tage);
+            printf("å§“å=%s,å¹´é¾„=%s\n", tname, tage);
         }
 
         if(atoi(tage) > max)
@@ -77,7 +77,7 @@ void read_file()//²éÀÏÊ¦ĞÅÏ¢£¬²¢ÕÒµ½ÄêÁäµÚ¶ş´óµÄÀÏÊ¦
 
     fclose(fp);
 }
-void delete_member()//É¾
+void delete_member()//åˆ 
 {
     FILE *fp = fopen("m.txt", "r");
 
@@ -112,13 +112,13 @@ void delete_member()//É¾
     {
         if(strcmp(delname, m[i].name) != 0)
         {
-            fprintf(fp, "ĞÕÃû=%s,ÄêÁä=%d\n", p[i].name, p[i].age);
+            fprintf(fp, "å§“å=%s,å¹´é¾„=%d\n", p[i].name, p[i].age);
         }
     }
 
     fclose(fp);
 }
-void updata_member()//¸Ä
+void updata_member()//æ”¹
 {
     FILE *fp = fopen("m.txt", "r+");
 
@@ -140,10 +140,10 @@ void updata_member()//¸Ä
         if(strcmp(oldname, tname) == 0)
         {
             strcpy(tname, newname);
-            //ÎÄ¼şÖ¸ÕëÒÑ¾­ÒÆ¶¯µ½Òª¸üĞÂµÄÕâÒ»ĞĞµÄÏÂÒ»ĞĞ
-            //ÎÄ¼şÖ¸ÕëÒª»áÌø
+            //æ–‡ä»¶æŒ‡é’ˆå·²ç»ç§»åŠ¨åˆ°è¦æ›´æ–°çš„è¿™ä¸€è¡Œçš„ä¸‹ä¸€è¡Œ
+            //æ–‡ä»¶æŒ‡é’ˆè¦ä¼šè·³
             fseek(fp, -strlen(buf), SEEK_CUR);
-            fprintf(fp, "ĞÕÃû=%s,ÄêÁä=%d\n", tname, tage);
+            fprintf(fp, "å§“å=%s,å¹´é¾„=%d\n", tname, tage);
             break;
         }
     }
@@ -154,14 +154,14 @@ void updata_member()//¸Ä
 int main35()
 {
     /*
-ÎÄ¼ş¸ñÊ½ÈçÏÂ£¬ĞĞÊıÎ´Öª
-ĞÕÃû=ÁõµÂ»ª,ÄêÁä=50
-ĞÕÃû=°²±¶,ÄêÁä=30
-ĞÕÃû=ÕÅÑ§ÓÑ,ÄêÁä=45
-ĞÕÃû=²ÔÀÏÊ¦,ÄêÁä=70
+æ–‡ä»¶æ ¼å¼å¦‚ä¸‹ï¼Œè¡Œæ•°æœªçŸ¥
+å§“å=åˆ˜å¾·å,å¹´é¾„=50
+å§“å=å®‰å€,å¹´é¾„=30
+å§“å=å¼ å­¦å‹,å¹´é¾„=45
+å§“å=è‹è€å¸ˆ,å¹´é¾„=70
 
-ÔËĞĞµÄ½á¹ûÊÇ´òÓ¡³öÕâ¸öÎÄ¼şÖĞÄêÁäµÚ¶ş´óÈËµÄĞÅÏ¢¡£
-¶ÔÎÄ¼şÄÜ¹»½øĞĞ Ôö É¾ ¸Ä ²é
+è¿è¡Œçš„ç»“æœæ˜¯æ‰“å°å‡ºè¿™ä¸ªæ–‡ä»¶ä¸­å¹´é¾„ç¬¬äºŒå¤§äººçš„ä¿¡æ¯ã€‚
+å¯¹æ–‡ä»¶èƒ½å¤Ÿè¿›è¡Œ å¢ åˆ  æ”¹ æŸ¥
 */
     char command[64] = {0};
 

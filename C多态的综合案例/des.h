@@ -1,6 +1,6 @@
 /*********************************************************
  *  des.h
- *  ÓÃ»§Ê¹ÓÃdesËã·¨Í·ÎÄ¼ş
+ *  ç”¨æˆ·ä½¿ç”¨desç®—æ³•å¤´æ–‡ä»¶
  *	
  *********************************************************/
 #ifndef _OPENDESS_H_
@@ -11,36 +11,36 @@ extern "C" {
 #endif
 
 
-//¼ÓÃÜĞ¡ÓÚ4kµÄÊı¾İ£¨encrypt£º¼ÓÃÜ£©
-//pInData£ºÃ÷ÎÄÊı¾İ
-//nInDataLen£ºÃ÷ÎÄÊı¾İ³¤¶È
-//pOutData£º¼ÓÃÜºóµÄÊı¾İ
-//pOutDataLen£º¼ÓÃÜÊı¾İµÄ³¤¶È
+//åŠ å¯†å°äº4kçš„æ•°æ®ï¼ˆencryptï¼šåŠ å¯†ï¼‰
+//pInDataï¼šæ˜æ–‡æ•°æ®
+//nInDataLenï¼šæ˜æ–‡æ•°æ®é•¿åº¦
+//pOutDataï¼šåŠ å¯†åçš„æ•°æ®
+//pOutDataLenï¼šåŠ å¯†æ•°æ®çš„é•¿åº¦
 int DesEnc(
 		unsigned char *pInData,
 		int            nInDataLen,
 		unsigned char *pOutData,
 		int           *pOutDataLen);
 
-//¼ÓÃÜµÈÓÚ4kµÄÊı¾İ
+//åŠ å¯†ç­‰äº4kçš„æ•°æ®
 int DesEnc_raw(
 	unsigned char *pInData,
 	int            nInDataLen,
 	unsigned char *pOutData,
 	int           *pOutDataLen);
 
-//½âÃÜĞ¡ÓÚ4kµÄÊı¾İ(decrypt£º½âÃÜ)
-//pInData£ºÃÜÎÄÊı¾İ
-//nInDataLen£ºÃÜÎÄÊı¾İ³¤¶È
-//pOutData£º½âÃÜºóµÄÊı¾İ
-//pOutDataLen£º½âÃÜÊı¾İµÄ³¤¶È
+//è§£å¯†å°äº4kçš„æ•°æ®(decryptï¼šè§£å¯†)
+//pInDataï¼šå¯†æ–‡æ•°æ®
+//nInDataLenï¼šå¯†æ–‡æ•°æ®é•¿åº¦
+//pOutDataï¼šè§£å¯†åçš„æ•°æ®
+//pOutDataLenï¼šè§£å¯†æ•°æ®çš„é•¿åº¦
 int DesDec(
 	   unsigned char *pInData,
 	   int            nInDataLen,
 	   unsigned char *pOutData,
 	   int           *pOutDataLen);
 
-//½âÃÜµÈÓÚ4kµÄÊı¾İ
+//è§£å¯†ç­‰äº4kçš„æ•°æ®
 int DesDec_raw(
 	unsigned char *pInData,
 	int            nInDataLen,

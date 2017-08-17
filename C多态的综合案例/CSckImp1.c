@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #pragma warning(disable:4996)
-//Í¨ĞÅº¯ÊıµÄÊµÏÖ
+//é€šä¿¡å‡½æ•°çš„å®ç°
 typedef struct Handle
 {
 	char ip[32];
@@ -11,7 +11,7 @@ typedef struct Handle
 	int len;
 }Handle;
 
-//Îª¾ä±ú½á¹¹Ìå·ÖÅä¿Õ¼ä£¬³õÊ¼»¯ip£¬ºÍ¶Ë¿ÚºÅ
+//ä¸ºå¥æŸ„ç»“æ„ä½“åˆ†é…ç©ºé—´ï¼Œåˆå§‹åŒ–ipï¼Œå’Œç«¯å£å·
 int socket_init(void **handle)
 {
 	int ret = 0;
@@ -36,7 +36,7 @@ END:
 	return ret;
 }
 
-//³õÊ¼»¯¾ä±úÄÚÈİ£¬Íâ²¿½«Êı¾İ·¢ËÍ¸ø¾ä±ú
+//åˆå§‹åŒ–å¥æŸ„å†…å®¹ï¼Œå¤–éƒ¨å°†æ•°æ®å‘é€ç»™å¥æŸ„
 int send_data(void *handle, char *buf, int len)
 {
 	int ret = 0;
@@ -56,7 +56,7 @@ END:
 	return ret;
 }
 
-//Íâ²¿½ÓÊÜ¾ä±ú·¢³öµÄÄÚÈİ
+//å¤–éƒ¨æ¥å—å¥æŸ„å‘å‡ºçš„å†…å®¹
 int recv_data(void *handle, char *buf, int *len)
 {
 	int ret = 0;
@@ -66,7 +66,7 @@ int recv_data(void *handle, char *buf, int *len)
 		goto END;
 	}
 	Handle *temp = (Handle *)handle;
-	if (temp->len == 0)//¾ä±úÀïÃ»ÓĞÄÚÈİ
+	if (temp->len == 0)//å¥æŸ„é‡Œæ²¡æœ‰å†…å®¹
 	{
 		ret = -2;
 		goto END;
@@ -78,7 +78,7 @@ END:
 
 }
 
-//½«¾ä±úÉêÇëµÄ¶Ñ¿Õ¼äÊÍ·Å
+//å°†å¥æŸ„ç”³è¯·çš„å †ç©ºé—´é‡Šæ”¾
 int socket_destory(void **handle)
 {
 	int ret = 0;

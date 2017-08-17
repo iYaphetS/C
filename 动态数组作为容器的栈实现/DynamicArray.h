@@ -12,19 +12,19 @@ typedef struct DynamicArry
 
 typedef void * DArray;
 typedef void(*myforeach)(void *);
-//Èç¹ûÔÚc++±àÒëÆ÷ÖĞÊ¹ÓÃ´Ë´úÂë£¬¸æËß±àÒëÆ÷ÓÃc±àÒë´Ë´úÂë
+//å¦‚æœåœ¨c++ç¼–è¯‘å™¨ä¸­ä½¿ç”¨æ­¤ä»£ç ï¼Œå‘Šè¯‰ç¼–è¯‘å™¨ç”¨cç¼–è¯‘æ­¤ä»£ç 
 #ifdef __cplusplus
 extern "C" {
 #endif
-	//¶¯Ì¬Êı×éµÄ³õÊ¼»¯
+	//åŠ¨æ€æ•°ç»„çš„åˆå§‹åŒ–
 	DArray  Array_init();
-	//²åÈë
+	//æ’å…¥
 	void Array_insert(DArray darray, int pos, void * data);
-	//É¾³ı
+	//åˆ é™¤
 	void Array_delete(DArray darray, int pos);
-	//±éÀú
+	//éå†
 	void Array_foreach(DArray darray, myforeach foreach);
-	//Ïú»Ù
+	//é”€æ¯
 	void Array_destory(DArray darray);
 
 

@@ -14,8 +14,8 @@ void *mycalloc(size_t rmemb, size_t size)
         return NULL;
     }
     int temp = rmemb * size;
-    //ÎÞ·ûºÅµÄint×î´ó40¶àÒÚµ±temp³¬¹ýÕâ¸öÊý¾ÍÒç³öÁË£¬±ä³ÉÒ»¸öºÜÐ¡µÄÊý
-    //ËùÒÔÒªÅÐ¶ÏÏà³ËµÄ½á¹ûÊÇ·ñÒç³ö£¬Ã»ÓÐÒç³ö·ÖÅä¿Õ¼ä²¢Çå¿Õ£¬·ñÕß·µ»ØNULL
+    //æ— ç¬¦å·çš„intæœ€å¤§40å¤šäº¿å½“tempè¶…è¿‡è¿™ä¸ªæ•°å°±æº¢å‡ºäº†ï¼Œå˜æˆä¸€ä¸ªå¾ˆå°çš„æ•°
+    //æ‰€ä»¥è¦åˆ¤æ–­ç›¸ä¹˜çš„ç»“æžœæ˜¯å¦æº¢å‡ºï¼Œæ²¡æœ‰æº¢å‡ºåˆ†é…ç©ºé—´å¹¶æ¸…ç©ºï¼Œå¦è€…è¿”å›žNULL
     if(temp / rmemb == size)
     {
         p = malloc(rmemb * size);
@@ -24,17 +24,17 @@ void *mycalloc(size_t rmemb, size_t size)
     return p;
 }
 
-int main23()
+int main()
 {
     /*
-    ±àÐ´callocµÄÊµÏÖ,Í¨¹ýµ÷ÓÃmallocÖ´ÐÐ·ÖÅä,µ÷ÓÃmemset½«ÄÚ´æÉèÖÃÎª00ÄãµÄ´úÂëÓ¦¸ÃÃ»ÓÐÈÎºÎÓÉËãÊõÒç³öÒýÆðµÄÂ©¶´,ÇÒÎÞÂÛÊý¾ÝÀàsize\_tÓÃ¶àÉÙÎ»±íÊ¾,´úÂë¶¼Ó¦¸ÃÕý³£¹¤×÷¡£
-    ¿âº¯ÊýcallocÓÐÈçÏÂÉùÃ÷:
+    ç¼–å†™callocçš„å®žçŽ°,é€šè¿‡è°ƒç”¨mallocæ‰§è¡Œåˆ†é…,è°ƒç”¨memsetå°†å†…å­˜è®¾ç½®ä¸º00ä½ çš„ä»£ç åº”è¯¥æ²¡æœ‰ä»»ä½•ç”±ç®—æœ¯æº¢å‡ºå¼•èµ·çš„æ¼æ´ž,ä¸”æ— è®ºæ•°æ®ç±»size\_tç”¨å¤šå°‘ä½è¡¨ç¤º,ä»£ç éƒ½åº”è¯¥æ­£å¸¸å·¥ä½œã€‚
+    åº“å‡½æ•°callocæœ‰å¦‚ä¸‹å£°æ˜Ž:
 
      void *calloc(size_t rmemb, size_t Size) ;
-     ¸ù¾Ý¿âÎÄµµ: ¡°º¯ÊýcallocÎªÒ»¸öÊý×é·ÖÅäÄÚ´æ,¸ÃÊý×éÓÐrmemb¸öÔªËØ,Ã¿¸öÔªËØÎªsize×Ö½Ú¡£ÄÚ´æÉèÖÃÎª00,Èç¹ûrmemb»òsizeÎª0,Ôòcalloc·µ»ØNULL¡£
+     æ ¹æ®åº“æ–‡æ¡£: â€œå‡½æ•°callocä¸ºä¸€ä¸ªæ•°ç»„åˆ†é…å†…å­˜,è¯¥æ•°ç»„æœ‰rmembä¸ªå…ƒç´ ,æ¯ä¸ªå…ƒç´ ä¸ºsizeå­—èŠ‚ã€‚å†…å­˜è®¾ç½®ä¸º00,å¦‚æžœrmembæˆ–sizeä¸º0,åˆ™callocè¿”å›žNULLã€‚
 
 
-     ×÷Îª²Î¿¼,º¯ÊýmallocºÍmemsetÉùÃ÷ÈçÏÂ:
+     ä½œä¸ºå‚è€ƒ,å‡½æ•°mallocå’Œmemsetå£°æ˜Žå¦‚ä¸‹:
 
      void malloc(size_t Size) ;
       void memset(void *s, int c, size_t n);

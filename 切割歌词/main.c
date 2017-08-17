@@ -9,7 +9,7 @@
 int main20()
 {
     /*
-将一串歌词切割为单词
+灏嗕竴涓叉瓕璇嶅垏鍓蹭负鍗曡瘝
 */
     char s[] = "On success, the total number of characters written is returned. \
             This count does not include the additional null-character automatically \

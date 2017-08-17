@@ -5,10 +5,10 @@
 void menu()
 {
 	printf("=================\n");
-	printf("*1 ¼ÓÃÜÎÄ¼ş\n");
-	printf("*2 ½âÃÜÎÄ¼ş\n");
-	printf("*3 ÇåÆÁ\n");
-	printf("*4 ÍË³ö\n");
+	printf("*1 åŠ å¯†æ–‡ä»¶\n");
+	printf("*2 è§£å¯†æ–‡ä»¶\n");
+	printf("*3 æ¸…å±\n");
+	printf("*4 é€€å‡º\n");
 	printf("=================\n");
 }
 
@@ -16,9 +16,9 @@ void DesEncfile()
 {
 	char src_path[64] = {0};
 	char des_path[64] = {0};
-	printf("ÇëÊäÈëÒª¼ÓÃÜµÄÎÄ¼şÃû£º");
+	printf("è¯·è¾“å…¥è¦åŠ å¯†çš„æ–‡ä»¶åï¼š");
 	scanf("%s", src_path);
-	printf("ÇëÊäÈë¼ÓÃÜºóµÄÎÄ¼şÃû£º");
+	printf("è¯·è¾“å…¥åŠ å¯†åçš„æ–‡ä»¶åï¼š");
 	scanf("%s", des_path);
 
 	FILE *fp1 = fopen(src_path, "rb");
@@ -38,7 +38,7 @@ void DesEncfile()
 	int ret = 0;
 	int len = 0;
 	unsigned char buf[4 * 1024] = {0};
-	unsigned char det[8 * 1024] = { 0 };//ÁÙÊ±´æ·Å¼ÓÃÜºóµÄÎÄ¼şÄÚÈİ£¬¿ÉÄÜÄÚÈİ»á±ä´ó
+	unsigned char det[8 * 1024] = { 0 };//ä¸´æ—¶å­˜æ”¾åŠ å¯†åçš„æ–‡ä»¶å†…å®¹ï¼Œå¯èƒ½å†…å®¹ä¼šå˜å¤§
 	int det_len = 0;
 	while ( (len = fread(buf, 1, sizeof(buf), fp1)) != 0 )
 	{
@@ -82,9 +82,9 @@ void DesDecfile()
 {
 	char src_path[64] = { 0 };
 	char des_path[64] = { 0 };
-	printf("ÇëÊäÈëÒª½âÃÜµÄÎÄ¼şÃû£º");
+	printf("è¯·è¾“å…¥è¦è§£å¯†çš„æ–‡ä»¶åï¼š");
 	scanf("%s", src_path);
-	printf("ÇëÊäÈë½âÃÜºóµÄÎÄ¼şÃû£º");
+	printf("è¯·è¾“å…¥è§£å¯†åçš„æ–‡ä»¶åï¼š");
 	scanf("%s", des_path);
 
 	FILE *fp1 = fopen(src_path, "rb");
@@ -104,7 +104,7 @@ void DesDecfile()
 	int ret = 0;
 	int len = 0;
 	unsigned char buf[4 * 1024] = { 0 };
-	unsigned char det[8 * 1024] = { 0 };//ÁÙÊ±´æ·Å½âÃÜºóµÄÎÄ¼şÄÚÈİ£¬¿ÉÄÜÄÚÈİ»á±ä´ó
+	unsigned char det[8 * 1024] = { 0 };//ä¸´æ—¶å­˜æ”¾è§£å¯†åçš„æ–‡ä»¶å†…å®¹ï¼Œå¯èƒ½å†…å®¹ä¼šå˜å¤§
 	int det_len = 0;
 	while ((len = fread(buf, 1, sizeof(buf), fp1)) != 0)
 	{

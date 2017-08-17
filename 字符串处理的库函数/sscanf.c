@@ -8,7 +8,7 @@ int main()
 	char s2[100] = {0};
 	int num1, num2;
 
-	fgets(s1, sizeof(s1) - 1, stdin);//回车是字符串的一部分
+	fgets(s1, sizeof(s1) - 1, stdin);//鍥炶溅鏄瓧绗︿覆鐨勪竴閮ㄥ垎
 	s1[strlen(s1) - 1] = 0;
 
 	sscanf(s1, "%d + %d = ", &num1, &num2);

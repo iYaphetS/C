@@ -26,11 +26,11 @@ int is_palindrome(const char *str)
 int main19()
 {
     /*
-    ÊäÈëÒ»¸ö×Ö·û´®£¬ÅÐ¶ÏÆäÊÇ·ñÊÇ»ØÎÄ×Ö·û´®¡£(»ØÎÄ£º¼´Õý¶ÁºÍ·´¶Á¶¼Ò»Ñù£¬Èçabcba)
-    ÇëÊµÏÖÒ»¸öº¯ÊýÍê³ÉÉÏÊö¹¦ÄÜ£¬²¢Ð´³öÏàÓ¦µÄ²âÊÔ´úÂë½øÐÐÑéÖ¤¡£
+    è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œåˆ¤æ–­å…¶æ˜¯å¦æ˜¯å›žæ–‡å­—ç¬¦ä¸²ã€‚(å›žæ–‡ï¼šå³æ­£è¯»å’Œåè¯»éƒ½ä¸€æ ·ï¼Œå¦‚abcba)
+    è¯·å®žçŽ°ä¸€ä¸ªå‡½æ•°å®Œæˆä¸Šè¿°åŠŸèƒ½ï¼Œå¹¶å†™å‡ºç›¸åº”çš„æµ‹è¯•ä»£ç è¿›è¡ŒéªŒè¯ã€‚
 
-    ²Î¿¼º¯ÊýÔ­ÐÍ:int is_palindrome(const char *str);
-    º¯Êý·µ»ØÖµ  :Èç¹ûÊÇ·µ»Ø0£»·ñÔò·µ»Ø·Ç0
+    å‚è€ƒå‡½æ•°åŽŸåž‹:int is_palindrome(const char *str);
+    å‡½æ•°è¿”å›žå€¼  :å¦‚æžœæ˜¯è¿”å›ž0ï¼›å¦åˆ™è¿”å›žéž0
 */
     char s[] = "122321";
 

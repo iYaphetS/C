@@ -9,13 +9,13 @@ typedef struct TreeNode
 	struct TreeNode *rchild;
 }TreeNode;
 
-void recursionForeachTree(TreeNode *root)//ÎªÊ²Ã´´«Ö¸Õë²»´«½Úµã£¬½ÚÔ¼ÄÚ´æÌá¸ßÐ§ÂÊ
+void recursionForeachTree(TreeNode *root)//ä¸ºä»€ä¹ˆä¼ æŒ‡é’ˆä¸ä¼ èŠ‚ç‚¹ï¼ŒèŠ‚çº¦å†…å­˜æé«˜æ•ˆçŽ‡
 {
 	if (root == NULL)
 	{
 		return;
 	}
-	//ÏÈÐò±éÀú
+	//å…ˆåºéåŽ†
 	recursionForeachTree(root->lchild);
 	printf("%c ", root->c);
 	recursionForeachTree(root->rchild);
@@ -31,7 +31,7 @@ void test()
 	TreeNode F = { 'F', NULL, NULL };
 	TreeNode G = { 'G', NULL, NULL };
 
-	//½¨Á¢½ÚµãÖ®¼äµÄ¹ØÏµ
+	//å»ºç«‹èŠ‚ç‚¹ä¹‹é—´çš„å…³ç³»
 	A.lchild = &B;
 	A.rchild = &F;
 

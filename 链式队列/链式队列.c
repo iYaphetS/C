@@ -29,9 +29,9 @@ void test()
 	push_LinkQueue(queue, &p3);
 	push_LinkQueue(queue, &p4);
 	Person *f = (Person *)front_LinkQueue(queue);
-	printf("对头：name = %s age = %d\n", f->name, f->age);
+	printf("瀵瑰ご锛歯ame = %s age = %d\n", f->name, f->age);
 	Person *b = (Person *)back_LinkQueue(queue);
-	printf("队尾：name = %s age = %d\n", b->name, b->age);
+	printf("闃熷熬锛歯ame = %s age = %d\n", b->name, b->age);
 
 	while (size_LinkQueue(queue) > 0)
 	{
@@ -45,7 +45,7 @@ void test()
 		printf("func destory_LinkQueue err:%d\n", ret);
 	}
 	queue = NULL;
-	printf("成功\n");
+	printf("鎴愬姛\n");
 }
 int main()
 {

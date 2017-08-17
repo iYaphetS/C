@@ -6,7 +6,7 @@ int main()
 
 	char s[100] = {0};
 	int num1, num2;
-	scanf("%d %s %d", &num1, s, &num2);//不能输入带有空格的字符串
+	scanf("%d %s %d", &num1, s, &num2);//涓嶈兘杈撳叆甯︽湁绌烘牸鐨勫瓧绗︿覆
 
 	printf("%d", num1 + num2);
 	return 0;

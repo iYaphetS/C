@@ -3,15 +3,15 @@
 #include <string.h>
 #pragma warning(disable:4996)
 
-//½á¹¹ÌåÀàĞÍ£¬Ã¿¸öµ¼Ê¦ÓĞÈı¸öÑ§Éú
+//ç»“æ„ä½“ç±»å‹ï¼Œæ¯ä¸ªå¯¼å¸ˆæœ‰ä¸‰ä¸ªå­¦ç”Ÿ
 typedef struct Teacher
 {
-	char *tName; //µ¼Ê¦Ãû×Ö£¬ĞèÒª¶¯Ì¬·ÖÅä¿Õ¼ä
-	char **stu;  //Èı¸öÑ§Éú£¬ĞèÒª¶¯Ì¬·ÖÅä¿Õ¼ä£¬¶ÑÇøÊı×é
+	char *tName; //å¯¼å¸ˆåå­—ï¼Œéœ€è¦åŠ¨æ€åˆ†é…ç©ºé—´
+	char **stu;  //ä¸‰ä¸ªå­¦ç”Ÿï¼Œéœ€è¦åŠ¨æ€åˆ†é…ç©ºé—´ï¼Œå †åŒºæ•°ç»„
 	int age;
 }Teacher;
 
-//ÔÚcreateTeacherÖĞ·ÖÅä¿Õ¼ä
+//åœ¨createTeacherä¸­åˆ†é…ç©ºé—´
 int createTeacher(Teacher **p/*out*/, int n1, int n2)
 {
 	Teacher *temp = (Teacher *)calloc(n1, sizeof(Teacher));
@@ -31,12 +31,12 @@ int createTeacher(Teacher **p/*out*/, int n1, int n2)
 	return 0;
 }
 
-//¸ø³ÉÔ±¸³Öµ
+//ç»™æˆå‘˜èµ‹å€¼
 void initTeacher(Teacher *p, int n1, int n2)
 {
 	int i, j, k = 0;
-	char *buf[3] = {"ÁõÀÏÊ¦", "ÍõÀÏÊ¦", "ÀîÀÏÊ¦"};
-	char *buf1[9] = { "Ğ¡Ã×", "Ğ¡Ã÷", "Ğ¡»¨" ,"Ğ¡»ª", "Ğ¡Àî", "Ğ¡Íõ", "Ğ¡Áõ", "Ğ¡¿É", "Ğ¡ÃÀ" };
+	char *buf[3] = {"åˆ˜è€å¸ˆ", "ç‹è€å¸ˆ", "æè€å¸ˆ"};
+	char *buf1[9] = { "å°ç±³", "å°æ˜", "å°èŠ±" ,"å°å", "å°æ", "å°ç‹", "å°åˆ˜", "å°å¯", "å°ç¾" };
 	int num[3] = { 20, 30, 40 };
 	for (i = 0 ; i < n1; i++)
 	{
@@ -51,27 +51,27 @@ void initTeacher(Teacher *p, int n1, int n2)
 	return;
 }
 
-//´òÓ¡½á¹¹Ìå³ÉÔ±ĞÅÏ¢
+//æ‰“å°ç»“æ„ä½“æˆå‘˜ä¿¡æ¯
 void printTeacher(Teacher *p, int n1, int n2)
 {
 	int i, j;
 	for (i = 0; i < n1; i++)
 	{
-		printf("ÀÏÊ¦£º%s\n", p[i].tName);
-		printf("Ñ§Éú£º");
+		printf("è€å¸ˆï¼š%s\n", p[i].tName);
+		printf("å­¦ç”Ÿï¼š");
 		for (j = 0; j < n2; j++)
 		{			
 			printf("%s\t", p[i].stu[j]);
 		}
 		printf("\n");
-		printf("ÄêÁä£º%d\n", p[i].age);
+		printf("å¹´é¾„ï¼š%d\n", p[i].age);
 
 	}
 	return;
 }
 
 
-//¸ù¾İµ¼Ê¦Ãû×ÖÅÅĞò, ½µĞò
+//æ ¹æ®å¯¼å¸ˆåå­—æ’åº, é™åº
 void sortTeacher(Teacher *p, int n)
 {
 	int i, j;
@@ -91,7 +91,7 @@ void sortTeacher(Teacher *p, int n)
 	return;
 }
 
-//ÊÍ·Å¿Õ¼ä£¬ÔÚº¯ÊıÄÚ²¿°Ñp¸³ÖµÎªNULL
+//é‡Šæ”¾ç©ºé—´ï¼Œåœ¨å‡½æ•°å†…éƒ¨æŠŠpèµ‹å€¼ä¸ºNULL
 void freeTeacher(Teacher **p, int n1, int n2)
 {
 	Teacher *temp = *p;
@@ -130,8 +130,8 @@ void freeTeacher(Teacher **p, int n1, int n2)
 int main(void)
 {
 	int ret = 0;
-	int n1 = 3; //µ¼Ê¦¸öÊı
-	int n2 = 3; //Ñ§Éú
+	int n1 = 3; //å¯¼å¸ˆä¸ªæ•°
+	int n2 = 3; //å­¦ç”Ÿ
 	Teacher *p = NULL;
 
 	ret = createTeacher(&p, n1, n2);
@@ -141,20 +141,20 @@ int main(void)
 		return ret;
 	}
 
-	initTeacher(p, n1, n2); //¸ø³ÉÔ±¸³Öµ
+	initTeacher(p, n1, n2); //ç»™æˆå‘˜èµ‹å€¼
 
-	//´òÓ¡³ÉÔ±£¬ÅÅĞòÇ°
-	printf("ÅÅĞòÇ°£º\n");
+	//æ‰“å°æˆå‘˜ï¼Œæ’åºå‰
+	printf("æ’åºå‰ï¼š\n");
 	printTeacher(p, n1, n2);
 
-	//¸ù¾İµ¼Ê¦Ãû×ÖÅÅĞò, ½µĞò
+	//æ ¹æ®å¯¼å¸ˆåå­—æ’åº, é™åº
 	sortTeacher(p, n1);
 
-	//´òÓ¡³ÉÔ±£¬ÅÅĞòºó
-	printf("\nÅÅĞòºó£º\n");
+	//æ‰“å°æˆå‘˜ï¼Œæ’åºå
+	printf("\næ’åºåï¼š\n");
 	printTeacher(p, n1, n2);
 
-	//ÊÍ·Å¿Õ¼ä£¬ÔÚº¯ÊıÄÚ²¿°Ñp¸³ÖµÎªNULL
+	//é‡Šæ”¾ç©ºé—´ï¼Œåœ¨å‡½æ•°å†…éƒ¨æŠŠpèµ‹å€¼ä¸ºNULL
 	freeTeacher(&p, n1, n2);
 
 	return 0;

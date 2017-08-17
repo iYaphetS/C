@@ -37,10 +37,10 @@ int main()
 
 	fp = fopen("cfg.txt", "wb");
 
-	//for (int i = 0; i < size_LinkList(list); i++)//i++£¬ size--£¬µ¼ÖÂºóÃæµÄ½Úµã±éÀú²»µ½
+	//for (int i = 0; i < size_LinkList(list); i++)//i++ï¼Œ size--ï¼Œå¯¼è‡´åŽé¢çš„èŠ‚ç‚¹éåŽ†ä¸åˆ°
 	while(size_LinkList(list) > 0)
 	{
-		//µÃµ½µÚÒ»¸öÓÐÐ§½Úµã
+		//å¾—åˆ°ç¬¬ä¸€ä¸ªæœ‰æ•ˆèŠ‚ç‚¹
 		cfgINFO * info = (cfgINFO *)firstnode_LinkList(list);
 		fprintf(fp, "%s = %s\n", info->key, info->value);
 		delete_LinkList(list, 0);

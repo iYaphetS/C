@@ -1,9 +1,9 @@
 #include "LinkList.h"
 
-//LinkListÉêÇëÔÚ¶Ñ¿Õ¼ä£¬½Úµã½á¹¹ÌåÔÚÕ»Çø
+//LinkListç”³è¯·åœ¨å †ç©ºé—´ï¼ŒèŠ‚ç‚¹ç»“æ„ä½“åœ¨æ ˆåŒº
 LList LinkList_init()
 {
-	//ÒòÎªLinkList´æµÄÊÇ½Úµã£¨²»ÊÇ½ÚµãÖ¸Õë£©£¬ÉêÇëÄÚ´æ¿Õ¼äÖĞ¾Í°üº¬ÁËÍ·½áµãÄÚ´æ¿Õ¼ä
+	//å› ä¸ºLinkListå­˜çš„æ˜¯èŠ‚ç‚¹ï¼ˆä¸æ˜¯èŠ‚ç‚¹æŒ‡é’ˆï¼‰ï¼Œç”³è¯·å†…å­˜ç©ºé—´ä¸­å°±åŒ…å«äº†å¤´ç»“ç‚¹å†…å­˜ç©ºé—´
 	LinkList * linklist = (LinkList *)calloc(1, sizeof(LinkList));
 	linklist->size = 0;
 	linklist->head.next = NULL;
@@ -17,19 +17,19 @@ void  LinkList_insert(LList *list, int pos, void *data)
 		return;
 	}
 	LinkList *List = (LinkList *)list;
-	//sizeÊÇÁ´±íµÄÓĞĞ§½Úµã
+	//sizeæ˜¯é“¾è¡¨çš„æœ‰æ•ˆèŠ‚ç‚¹
 	if (pos < 0 || pos > List->size - 1)
 	{
 		pos = List->size;
 	}
-	LinkNode * pCur = &List->head;//¶¨ÒåÒ»¸öÁãÊ±½ÚµãÖ¸ÏòÍ·½áµã
-	//ÕÒµ½Òª²åÈëÎ»ÖÃµÄÇ°Ò»¸ö½Úµã
+	LinkNode * pCur = &List->head;//å®šä¹‰ä¸€ä¸ªé›¶æ—¶èŠ‚ç‚¹æŒ‡å‘å¤´ç»“ç‚¹
+	//æ‰¾åˆ°è¦æ’å…¥ä½ç½®çš„å‰ä¸€ä¸ªèŠ‚ç‚¹
 	for (int i = 0; i < pos; i++)
 	{
 		pCur = pCur->next;
 	}
 	LinkNode *pNew = (LinkNode *)calloc(1, sizeof(LinkNode));
-	pNew->data = data;//Íâ²¿Êı¾İµÄµØÖ·¸ø½ÚµãÖĞÊı¾İÖ¸Õë
+	pNew->data = data;//å¤–éƒ¨æ•°æ®çš„åœ°å€ç»™èŠ‚ç‚¹ä¸­æ•°æ®æŒ‡é’ˆ
 	pNew->next = pCur->next;
 	pCur->next = pNew;
 
@@ -51,7 +51,7 @@ void	 LinkList_delete(LList *list, int pos)
 		return;
 	}
 	LinkNode *pCur = &List->head;
-	//É¾³ıÒ»¸öÔªËØ£¬ÒªÕÒµ½É¾³ıµÄ¸Ã½ÚµãµÄÇ°Ò»¸ö½ÚµãÖ¸ÏòÒªÉ¾µÄ½ÚµãµÄÏÂÒ»¸ö½Úµã
+	//åˆ é™¤ä¸€ä¸ªå…ƒç´ ï¼Œè¦æ‰¾åˆ°åˆ é™¤çš„è¯¥èŠ‚ç‚¹çš„å‰ä¸€ä¸ªèŠ‚ç‚¹æŒ‡å‘è¦åˆ çš„èŠ‚ç‚¹çš„ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
 	for (int i = 0; i < pos; i++)
 	{
 		pCur = pCur->next;
@@ -98,14 +98,14 @@ void LinkList_foreach(LList *list, FOREACH foreach)
 	}
 	LinkList *List = (LinkList *)list;
 
-	LinkNode *pCur = List->head.next;//Í·½áµãµÄnextÊÇÒ»¸öÖ¸ÏòÏÂÒ»¸ö½ÚµãµÄÖ¸Õë£¬×¢Òâ²»ÓÃÈ¡µØÖ·
+	LinkNode *pCur = List->head.next;//å¤´ç»“ç‚¹çš„nextæ˜¯ä¸€ä¸ªæŒ‡å‘ä¸‹ä¸€ä¸ªèŠ‚ç‚¹çš„æŒ‡é’ˆï¼Œæ³¨æ„ä¸ç”¨å–åœ°å€
 	while (pCur != NULL)
 	{
 		foreach(pCur->data);
 		pCur = pCur->next;
 	}
 }
-//ÄæĞò±éÀúÁ´±í
+//é€†åºéå†é“¾è¡¨
 void recursion_foreach(LNode node, FOREACH foreach)
 {
 	if (NULL == node || NULL == foreach)
@@ -138,7 +138,7 @@ void LinkList_reverse_foreach(LList *list, FOREACH foreach)
 	foreach(pCur->data);
 	*/
 }
-//Ã°ÅİÅÅĞò
+//å†’æ³¡æ’åº
 void LinkList_BubbleSort(LList *list, int(*compare)(void*,void*))
 {
 	if (NULL == list)
@@ -149,7 +149,7 @@ void LinkList_BubbleSort(LList *list, int(*compare)(void*,void*))
 
 	LinkNode *p = NULL;
 	LinkNode *q = NULL;
-	//ÕÒµ½Î²Ö¸Õë
+	//æ‰¾åˆ°å°¾æŒ‡é’ˆ
 	LinkNode *tail = List->head.next;
 	while (tail->next != NULL)
 	{
@@ -169,17 +169,17 @@ void LinkList_BubbleSort(LList *list, int(*compare)(void*,void*))
 				t->data = temp;
 			}				 
 		}
-		tail = q;//µÚÒ»´ÎÑ­»·qÔÚtail£¨×îºóÒ»¸ö½Úµã£©Ç°Ò»¸ö½ÚµãÍ£Ö¹£¬
-				 //¸³Öµ¸øtaiÏòÇ°ÒÆ¶¯Ò»¸öÎ»ÖÃ	
+		tail = q;//ç¬¬ä¸€æ¬¡å¾ªç¯qåœ¨tailï¼ˆæœ€åä¸€ä¸ªèŠ‚ç‚¹ï¼‰å‰ä¸€ä¸ªèŠ‚ç‚¹åœæ­¢ï¼Œ
+				 //èµ‹å€¼ç»™taiå‘å‰ç§»åŠ¨ä¸€ä¸ªä½ç½®	
 	}
 #endif
-	//¸Ä½ø
-	int flag = 0;//Ä¬ÈÏÃ»ÓĞÅÅºÃ
+	//æ”¹è¿›
+	int flag = 0;//é»˜è®¤æ²¡æœ‰æ’å¥½
 	for (p = List->head.next; p->next != NULL && flag == 0; p = p->next)
 	{
-		flag = 1;//ÉèÖÃÎªÅÅºÃÁË£¬Èç¹ûÔÚÏÂÃæµÄforÑ­»·ÖĞ
-		//Ñ­»·½áÊøÌõ¼şÅĞ¶Ï¶¼²»³ÉÁ¢£¬ËµÃ÷ËùÓĞÊı¾İÒÑ¾­ÅÅĞòºÃÁË
-		//Íâ²ãÑ­»·ÒÑ¾­Ã»ÓĞ±ØÒª¼ÌĞø
+		flag = 1;//è®¾ç½®ä¸ºæ’å¥½äº†ï¼Œå¦‚æœåœ¨ä¸‹é¢çš„forå¾ªç¯ä¸­
+		//å¾ªç¯ç»“æŸæ¡ä»¶åˆ¤æ–­éƒ½ä¸æˆç«‹ï¼Œè¯´æ˜æ‰€æœ‰æ•°æ®å·²ç»æ’åºå¥½äº†
+		//å¤–å±‚å¾ªç¯å·²ç»æ²¡æœ‰å¿…è¦ç»§ç»­
 		for (q = List->head.next; q != tail; q = q->next)
 		{
 			LinkNode *t = q->next;
@@ -192,11 +192,11 @@ void LinkList_BubbleSort(LList *list, int(*compare)(void*,void*))
 				t->data = temp;
 			}
 		}
-		tail = q;//µÚÒ»´ÎÑ­»·qÔÚtail£¨×îºóÒ»¸ö½Úµã£©Ç°Ò»¸ö½ÚµãÍ£Ö¹£¬
-				 //¸³Öµ¸øtaiÏòÇ°ÒÆ¶¯Ò»¸öÎ»ÖÃ	
+		tail = q;//ç¬¬ä¸€æ¬¡å¾ªç¯qåœ¨tailï¼ˆæœ€åä¸€ä¸ªèŠ‚ç‚¹ï¼‰å‰ä¸€ä¸ªèŠ‚ç‚¹åœæ­¢ï¼Œ
+				 //èµ‹å€¼ç»™taiå‘å‰ç§»åŠ¨ä¸€ä¸ªä½ç½®	
 	}
 }
-//Ñ¡ÔñÅÅĞò
+//é€‰æ‹©æ’åº
 void LinkList_SelectionSort(LList *list, int(*compare)(void*, void*))
 {
 	if (NULL == list)
@@ -225,10 +225,10 @@ void LinkList_SelectionSort(LList *list, int(*compare)(void*, void*))
 		}
 	}
 #endif
-	//¸Ä½ø
+	//æ”¹è¿›
 	for (p = List->head.next; p->next != NULL; p = p->next)
 	{
-		LinkNode *r = p;//Ä¬ÈÏpÊÇÓëºóÃæµÄÃ¿¸öÔªËØ±È½ÏºóµÄ½á¹û£¨×î´ó£¬»òÕß×îĞ¡£©
+		LinkNode *r = p;//é»˜è®¤pæ˜¯ä¸åé¢çš„æ¯ä¸ªå…ƒç´ æ¯”è¾ƒåçš„ç»“æœï¼ˆæœ€å¤§ï¼Œæˆ–è€…æœ€å°ï¼‰
 		for (q = p->next; q->next != NULL; q = q->next)
 		{
 			if (compare(p->data, q->data) > 0)
@@ -236,7 +236,7 @@ void LinkList_SelectionSort(LList *list, int(*compare)(void*, void*))
 				r = q;
 			}
 		}
-		//Èç¹ûÄÚ²ãÑ­»·½áÊøºó£¬rÃ»ÓĞ±»ÖØĞÂ¸³Öµ£¬Ò²¾ÍÃ»ÓĞ±ØÒª½»»»
+		//å¦‚æœå†…å±‚å¾ªç¯ç»“æŸåï¼Œræ²¡æœ‰è¢«é‡æ–°èµ‹å€¼ï¼Œä¹Ÿå°±æ²¡æœ‰å¿…è¦äº¤æ¢
 		if (r != p)
 		{
 			void *temp = NULL;
@@ -279,8 +279,8 @@ void LinkList_destroy(LList *list)
 		return;
 	}
 	LinkList *List = (LinkList *)list;
-	LinkNode *pCur = List->head.next;//Í·½áµãÊÇµ¥¶À´æ´¢ÔÚÁ´±íĞÅÏ¢½á¹¹ÌåÖĞ£¬ËùÒÔ´ÓµÚÒ»¸öÓĞĞ§½Úµã¿ªÊ¼É¾³ı
-	LinkNode *temp = NULL;//´æ·ÅÒªÉ¾³ıµÄ½ÚµãµÄÏÂÒ»¸ö½Úµã
+	LinkNode *pCur = List->head.next;//å¤´ç»“ç‚¹æ˜¯å•ç‹¬å­˜å‚¨åœ¨é“¾è¡¨ä¿¡æ¯ç»“æ„ä½“ä¸­ï¼Œæ‰€ä»¥ä»ç¬¬ä¸€ä¸ªæœ‰æ•ˆèŠ‚ç‚¹å¼€å§‹åˆ é™¤
+	LinkNode *temp = NULL;//å­˜æ”¾è¦åˆ é™¤çš„èŠ‚ç‚¹çš„ä¸‹ä¸€ä¸ªèŠ‚ç‚¹
 	while (pCur != NULL)
 	{
 		temp = pCur->next;

@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "framework.h"//°üº¬CSocketProtocol  CEncDesProtocol
-#include "CSckImp1.h"//°üº¬socket_init, send_data, recv_data, socket_destoryÉùÃ÷
-#include "CHwImp.h"//°üº¬enc_file, des_fileÉùÃ÷
+#include "framework.h"//åŒ…å«CSocketProtocol  CEncDesProtocol
+#include "CSckImp1.h"//åŒ…å«socket_init, send_data, recv_data, socket_destoryå£°æ˜
+#include "CHwImp.h"//åŒ…å«enc_file, des_fileå£°æ˜
 
 
 int main()
@@ -13,7 +13,7 @@ int main()
 	CEncDesProtocol ed;
 	setED(&ed, enc_file, des_file);
 
-	//±¨ÎÄÎª¼òµ¥µÄ×Ö·û´®
+	//æŠ¥æ–‡ä¸ºç®€å•çš„å­—ç¬¦ä¸²
 	char send_buf[] = "hello";
 	int send_len = strlen(send_buf);
 
@@ -27,7 +27,7 @@ int main()
 		return -1;
 	}
 
-	printf("½ÓÊÜµ½µÄ±¨ÎÄĞÅÏ¢£º%s, ³¤¶È£º%d\n", recv_buf, recv_len);
+	printf("æ¥å—åˆ°çš„æŠ¥æ–‡ä¿¡æ¯ï¼š%s, é•¿åº¦ï¼š%d\n", recv_buf, recv_len);
 
 	return 0;
 }

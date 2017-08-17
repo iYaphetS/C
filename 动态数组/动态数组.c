@@ -6,8 +6,8 @@ typedef struct Person
 	int age;
 }Person;
 
-//ÔÚDynamicArray.h¶¨ÒåÁË´òÓ¡º¯ÊıµÄĞÎÊ½£¨ĞÎ²ÎÀàĞÍ£¬ ·µ»ØÖµÀàĞÍ£©
-//ÔÚÖ÷º¯ÊıÖĞ×Ô¼º´òÓ¡ÏàÓ¦Êı¾İ
+//åœ¨DynamicArray.hå®šä¹‰äº†æ‰“å°å‡½æ•°çš„å½¢å¼ï¼ˆå½¢å‚ç±»å‹ï¼Œ è¿”å›å€¼ç±»å‹ï¼‰
+//åœ¨ä¸»å‡½æ•°ä¸­è‡ªå·±æ‰“å°ç›¸åº”æ•°æ®
 //typedef void(*myforeach)(void *);
 void my_arrprint(void * data)
 {
@@ -16,7 +16,7 @@ void my_arrprint(void * data)
 }
 void test()
 {
-	//³õÊ¼»¯¶¯Ì¬Êı×é£¨·ÖÅäÄÚ´æ¿Õ¼ä£©
+	//åˆå§‹åŒ–åŠ¨æ€æ•°ç»„ï¼ˆåˆ†é…å†…å­˜ç©ºé—´ï¼‰
 	DArray * Array = Array_init();//****
 	Person p1 = { "A", 10 };
 	Person p2 = { "B", 20 };

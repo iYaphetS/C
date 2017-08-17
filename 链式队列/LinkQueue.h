@@ -22,19 +22,19 @@ typedef void * LinkQueue;
 #ifdef __cplusplus
 extern "C" {
 #endif
-	//Á´Ê½¶ÓÁĞµÄ³õÊ¼»¯
+	//é“¾å¼é˜Ÿåˆ—çš„åˆå§‹åŒ–
 	int init_LinkQueue(LinkQueue *lqueue);
-	//Èë¶Ó
+	//å…¥é˜Ÿ
 	int push_LinkQueue(LinkQueue lqueue, void *data);
-	//³ö¶Ó
+	//å‡ºé˜Ÿ
 	int pop_LinkQueue(LinkQueue lqueue);
-	//»ñµÃ¶ÔÍ·ÔªËØ
+	//è·å¾—å¯¹å¤´å…ƒç´ 
 	LinkNode front_LinkQueue(LinkQueue lqueue);
-	//»ñµÃ¶ÓÎ²ÔªËØ
+	//è·å¾—é˜Ÿå°¾å…ƒç´ 
 	LinkNode back_LinkQueue(LinkQueue lqueue);
-	//¶ÓµÄ´óĞ¡
+	//é˜Ÿçš„å¤§å°
 	int size_LinkQueue(LinkQueue lqueue);
-	//¶ÓµÄÏú»Ù
+	//é˜Ÿçš„é”€æ¯
 	int destory_LinkQueue(LinkQueue lqueue);
 
 #ifdef __cplusplus

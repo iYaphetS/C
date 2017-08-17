@@ -29,7 +29,7 @@ void test()
 	TreeNode F = { 'F', NULL, NULL };
 	TreeNode G = { 'G', NULL, NULL };
 
-	//½¨Á¢½ÚµãÖ®¼äµÄ¹ØÏµ
+	//å»ºç«‹èŠ‚ç‚¹ä¹‹é—´çš„å…³ç³»
 	A.lchild = &B;
 	A.rchild = &F;
 

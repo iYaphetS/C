@@ -27,38 +27,38 @@ int getdaysofmon(int y, int m)
 int main30()
 {
     /*
-    Íê³ÉUNIXÊ±¼ä´Áµ½±±¾©Ê±¼ä(¶«°ËÇø +8Ê±Çø)ÈÕÆÚ¸ñÊ½µÄ×ª»¯¡£
-    UNIXÊ±¼ä´Á±íÊ¾´Ó1970Äê1ÔÂ1ÈÕ0:0:0µ½Ä³¸ö±»²âÊ±¼äµãµÄÃëÊý¡£
-    1489937291  ±íÊ¾´ËÊ±µ½1970Äê1ÔÂ1ÈÕ0:0:0ÒÑ¾­¾­ÀúÁË 1489937291Ãë
-    ´Ë¿ÌÊÇ±±¾©Ê±¼ä2017/3/19 23:28:11
+    å®ŒæˆUNIXæ—¶é—´æˆ³åˆ°åŒ—äº¬æ—¶é—´(ä¸œå…«åŒº +8æ—¶åŒº)æ—¥æœŸæ ¼å¼çš„è½¬åŒ–ã€‚
+    UNIXæ—¶é—´æˆ³è¡¨ç¤ºä»Ž1970å¹´1æœˆ1æ—¥0:0:0åˆ°æŸä¸ªè¢«æµ‹æ—¶é—´ç‚¹çš„ç§’æ•°ã€‚
+    1489937291  è¡¨ç¤ºæ­¤æ—¶åˆ°1970å¹´1æœˆ1æ—¥0:0:0å·²ç»ç»åŽ†äº† 1489937291ç§’
+    æ­¤åˆ»æ˜¯åŒ—äº¬æ—¶é—´2017/3/19 23:28:11
 
-    489937291¶ÔÓ¦µÄ±±¾©Ê±¼ä1985/7/11 21:41:31
+    489937291å¯¹åº”çš„åŒ—äº¬æ—¶é—´1985/7/11 21:41:31
 */
     int y, m, d;
     int hour,min,sec;
     int timestamp = 0;
     printf("please input timestamp:");
     scanf("%d", &timestamp);
-    clock_t begin = clock();//¼ÇÂ¼¿ªÊ¼µÄÊ±¼ä£¨ºÁÃë£©
+    clock_t begin = clock();//è®°å½•å¼€å§‹çš„æ—¶é—´ï¼ˆæ¯«ç§’ï¼‰
 
-    //¶«°ËÇø + 8¸öÐ¡Ê±
+    //ä¸œå…«åŒº + 8ä¸ªå°æ—¶
     timestamp += 3600 * 8;
 
-    //ÓÃÒ»¸öÁãÊ±±äÁ¿½ÓÊ£ÓàµÄ×ÜÊ±¼ä
+    //ç”¨ä¸€ä¸ªé›¶æ—¶å˜é‡æŽ¥å‰©ä½™çš„æ€»æ—¶é—´
     int temp = timestamp;
     for(y = 1970; ; y++)
     {
-        //ÈóÄê±ÈÆ½Äê¶àÒ»Ìì£¬¸ù¾ÝÊÇ²»ÊÇÈòÄêÀ´¿¼ÂÇ¼Ó²»¼ÓÕâÒ»Ìì×ÜÃëÊý
+        //æ¶¦å¹´æ¯”å¹³å¹´å¤šä¸€å¤©ï¼Œæ ¹æ®æ˜¯ä¸æ˜¯é—°å¹´æ¥è€ƒè™‘åŠ ä¸åŠ è¿™ä¸€å¤©æ€»ç§’æ•°
         temp -= isleapyear(y) * oneday_second + leapyear_second;
         if(temp > 0)
             timestamp = temp;
         else
             break;
     }
-    //Èç¹û²»ÓÃÁãÊ±±äÁ¿temp£¬ÒªÌø³öÑ­»·timetamp±ØÐë¼õµ½¸ºÊý£¬
-    //ÄÇÃ´ÏëµÃµ½Ê£ÓàµÄ×ÜÔÂÊý£¬»¹µÃ¼ÓÉÏÒ»ÄêµÄÊ±¼ä£¬»¹µÃÅÐ¶Ï¼ÓÉÏµÄÕâÄêÊÇ·ñÊÇÈòÄê
+    //å¦‚æžœä¸ç”¨é›¶æ—¶å˜é‡tempï¼Œè¦è·³å‡ºå¾ªçŽ¯timetampå¿…é¡»å‡åˆ°è´Ÿæ•°ï¼Œ
+    //é‚£ä¹ˆæƒ³å¾—åˆ°å‰©ä½™çš„æ€»æœˆæ•°ï¼Œè¿˜å¾—åŠ ä¸Šä¸€å¹´çš„æ—¶é—´ï¼Œè¿˜å¾—åˆ¤æ–­åŠ ä¸Šçš„è¿™å¹´æ˜¯å¦æ˜¯é—°å¹´
 
-    //Ê£Óà²»×ãÒ»ÄêµÄ×ÜÊ±¼ä
+    //å‰©ä½™ä¸è¶³ä¸€å¹´çš„æ€»æ—¶é—´
     temp = timestamp;
     for(m = 1; m < 13; m++)
     {
@@ -69,7 +69,7 @@ int main30()
             break;
     }
 
-    //Ê£Óà²»×ãÒ»¸öÔÂµÄ×ÜÊ±¼ä
+    //å‰©ä½™ä¸è¶³ä¸€ä¸ªæœˆçš„æ€»æ—¶é—´
     temp = timestamp;
     for(d = 1; d < getdaysofmon(y,m); d++)
     {
@@ -80,7 +80,7 @@ int main30()
             break;
     }
 
-    //µÃµ½²»×ãÒ»ÌìµÄÊ±·ÖÃë£¨¾ÍÏñÇó1234¸÷¸öÎ»ÉÏµÄÖµÊÇÒ»¸öµÀÀí£¬Ö»²»¹ýÊ±¼äÊÇ60½øÖÆµÄ£©
+    //å¾—åˆ°ä¸è¶³ä¸€å¤©çš„æ—¶åˆ†ç§’ï¼ˆå°±åƒæ±‚1234å„ä¸ªä½ä¸Šçš„å€¼æ˜¯ä¸€ä¸ªé“ç†ï¼Œåªä¸è¿‡æ—¶é—´æ˜¯60è¿›åˆ¶çš„ï¼‰
     temp = timestamp;
     sec = temp % 60;
     min = temp /60 % 60;
@@ -88,7 +88,7 @@ int main30()
 
     printf("%4d,%02d,%02d %02d:%02d:%02d\n", y, m, d, hour, min, sec);
 
-    clock_t end = clock();//¼ÇÂ¼½áÊøÊ±¼ä£¨ºÁÃë£©CLOCKS_PER_SEC == 1000
+    clock_t end = clock();//è®°å½•ç»“æŸæ—¶é—´ï¼ˆæ¯«ç§’ï¼‰CLOCKS_PER_SEC == 1000
     printf("%d\n", (float)((end - begin) / CLOCKS_PER_SEC));
     return 0;
 }

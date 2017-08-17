@@ -36,7 +36,7 @@ void inupt_info(info **s, int num)
         }
         strcpy(p[i].name, buf);
     }
-    *s = p;//½«¿ª±ÙµÄ¶Ñ¿Õ¼äµÄÊ×µØÖ·¸³¸ø*s£¬*sÒ²Ö¸ÏòÕâÆ¬¿Õ¼ä
+    *s = p;//å°†å¼€è¾Ÿçš„å †ç©ºé—´çš„é¦–åœ°å€èµ‹ç»™*sï¼Œ*sä¹ŸæŒ‡å‘è¿™ç‰‡ç©ºé—´
     return;
 
 
@@ -68,19 +68,19 @@ void free_info(info **s, int num)
 
 int main28()
 {
-    /*    ¿ÎÌÃ´úÂëÍêÉÆ¡£
-    ´ÓÆÁÄ»ÉÏÊäÈëÒ»¸öÊý n
-    È»ºóÊäÈën¸öÈË»ù±¾ÐÅÏ¢(ÐÕÃû Éí¸ß)
-         ´ýÊäÈëÍê³ÉÖ®ºó  ½«ËùÓÐµÄÐÅÏ¢È«²¿´òÓ¡³ö
+    /*    è¯¾å ‚ä»£ç å®Œå–„ã€‚
+    ä»Žå±å¹•ä¸Šè¾“å…¥ä¸€ä¸ªæ•° n
+    ç„¶åŽè¾“å…¥nä¸ªäººåŸºæœ¬ä¿¡æ¯(å§“å èº«é«˜)
+         å¾…è¾“å…¥å®Œæˆä¹‹åŽ  å°†æ‰€æœ‰çš„ä¿¡æ¯å…¨éƒ¨æ‰“å°å‡º
          3
          zhangsan 170
          lisi 190
          wanger 175
 
-         µÚ1¸öÈËµÄÐÕÃû:zhangsan Éí¸ß:170
-         µÚ2¸öÈËµÄÐÕÃû:lisi     Éí¸ß:190
-         µÚ1¸öÈËµÄÐÕÃû:wanger   Éí¸ß:175
-    ÒªÇó:Ê¹ÓÃÒÔÏÂÐÎÊ½µÄ½á¹¹Ìå
+         ç¬¬1ä¸ªäººçš„å§“å:zhangsan èº«é«˜:170
+         ç¬¬2ä¸ªäººçš„å§“å:lisi     èº«é«˜:190
+         ç¬¬1ä¸ªäººçš„å§“å:wanger   èº«é«˜:175
+    è¦æ±‚:ä½¿ç”¨ä»¥ä¸‹å½¢å¼çš„ç»“æž„ä½“
          struct Info_t
     {
         char *name;

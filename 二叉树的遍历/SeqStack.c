@@ -1,5 +1,5 @@
 #include "SeqStack.h"
-//Õ»µÄ³õÊ¼»¯
+//æ ˆçš„åˆå§‹åŒ–
 Stack init_Stack()
 {
 	SeqStack *stack = (SeqStack *)calloc(1, sizeof(SeqStack));
@@ -7,7 +7,7 @@ Stack init_Stack()
 	stack->size = 0;
 	return stack;
 }
-//Ñ¹Õ»
+//å‹æ ˆ
 void push_Stack(Stack stack, void *data)
 {
 	if (NULL == stack)
@@ -26,7 +26,7 @@ void push_Stack(Stack stack, void *data)
 	seqstack->data[seqstack->size] = data;
 	seqstack->size++;
 }
-//³öÕ»
+//å‡ºæ ˆ
 void pop_Stack(Stack *stack)
 {
 	if (NULL == stack)
@@ -40,7 +40,7 @@ void pop_Stack(Stack *stack)
 	}
 	seqstack->size--;
 }
-//´ÓÕ»¶¥µ¯³öÔªËØ
+//ä»æ ˆé¡¶å¼¹å‡ºå…ƒç´ 
 void* top_Stack(Stack *stack)
 {
 	if (NULL == stack)
@@ -55,7 +55,7 @@ void* top_Stack(Stack *stack)
 	}
 	return seqstack->data[seqstack->size - 1];
 }
-//»ñµÃÕ»ÔªËØµÄ¸öÊı
+//è·å¾—æ ˆå…ƒç´ çš„ä¸ªæ•°
 int size_Stack(Stack *stack)
 {
 	if (NULL == stack)
@@ -66,7 +66,7 @@ int size_Stack(Stack *stack)
 
 	return seqstack->size;
 }
-//Ïú»ÙÕ»
+//é”€æ¯æ ˆ
 void destroy_Stack(Stack stack)
 {
 	if (NULL == stack)

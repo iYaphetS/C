@@ -1,8 +1,8 @@
 #pragma once
 
-//¶¨ÒåÍ¨ĞÅ½á¹¹Ìå
+//å®šä¹‰é€šä¿¡ç»“æ„ä½“
 
-//Í¨ĞÅº¯ÊıÀàĞÍ¶¨Òå
+//é€šä¿¡å‡½æ•°ç±»å‹å®šä¹‰
 typedef int(*PSOCKET_INIT)(void **handle);
 
 typedef int(*PSEND_DATA)(void *handle, char *buf, int len);
@@ -13,12 +13,12 @@ typedef int(*PSOCKET_DESTORY)(void **handle);
 
 typedef struct CSocketProtocol
 {
-	//¶¨Òåº¯ÊıÖ¸Õë±äÁ¿
+	//å®šä¹‰å‡½æ•°æŒ‡é’ˆå˜é‡
 	PSOCKET_INIT socket_init;
 	PSEND_DATA send_data;
 	PRECV_DATA recv_data;
 	PSOCKET_DESTORY socket_destory;
 }CSocketProtocol;
 
-//Í¨ĞÅ½á¹¹Ìå³õÊ¼»¯º¯ÊıµÄÉùÃ÷
+//é€šä¿¡ç»“æ„ä½“åˆå§‹åŒ–å‡½æ•°çš„å£°æ˜
 void setSP(CSocketProtocol *SP, PSOCKET_INIT init, PSEND_DATA send, PSEND_DATA recv, PSOCKET_DESTORY destory);

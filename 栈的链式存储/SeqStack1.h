@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-//栈的链式存储
+//鏍堢殑閾惧紡瀛樺偍
 typedef struct LinkNode
 {
 	struct LinkNode *next;
@@ -17,7 +17,7 @@ typedef struct Stack
 #ifdef __cplusplus
 extern "C" {
 #endif
-	//链表的初始化
+	//閾捐〃鐨勫垵濮嬪寲
 	Stack *init_Stack();
 	void push_Stack(Stack *stack, void *data);
 	void pop_Stack(Stack *stack);

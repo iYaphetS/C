@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "CEncDesProtocol.h"
 
-//�ӽ��ܽṹ���Ա������ʼ��
+//加解密结构体成员变量初始化
 void setED(CEncDesProtocol *ED, PENCFILE enc, PDESFILE des)
 {
 	if (ED == NULL || enc == NULL || des == NULL)

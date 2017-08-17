@@ -6,7 +6,7 @@ int main()
 	c = getchar();
 
 	//printf("%c", c);
-	putchar(c);//²»»»ĞĞ
+	putchar(c);//ä¸æ¢è¡Œ
 
 	return 0;
 }

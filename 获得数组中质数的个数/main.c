@@ -40,20 +40,20 @@ int getCountOfPrimer(int arr[],int len,unsigned int *p_count)
 int main32()
 {
     /*
-»ñÈ¡µ½Êý×éÖÐÖÊÊýµÄ¸öÊý
-º¯ÊýÔ­ÐÍ£ºint getCountOfPrimer(int arr[],int len,unsigned int *p_count);
-º¯Êý¹¦ÄÜ£º»ñÈ¡µ½Êý×éarrÖÐÖÊÊýµÄ¸öÊý
-º¯Êý²ÎÊý:	arrÊÇÐèÒª±»É¨ÃèµÄÊý×é
-    p_countÊÇÒ»¸ö´«³öµÄÖ¸Õë²ÎÊý,½«»ñÈ¡µ½µÄÖÊÊý¸öÊý´«³ö
-º¯Êý·µ»ØÖµ£º
-    ³É¹¦·µ»Ø0£»
-    Èç¹ûÓÐ´íÎó·µ»Ø-1
+èŽ·å–åˆ°æ•°ç»„ä¸­è´¨æ•°çš„ä¸ªæ•°
+å‡½æ•°åŽŸåž‹ï¼šint getCountOfPrimer(int arr[],int len,unsigned int *p_count);
+å‡½æ•°åŠŸèƒ½ï¼šèŽ·å–åˆ°æ•°ç»„arrä¸­è´¨æ•°çš„ä¸ªæ•°
+å‡½æ•°å‚æ•°:	arræ˜¯éœ€è¦è¢«æ‰«æçš„æ•°ç»„
+    p_countæ˜¯ä¸€ä¸ªä¼ å‡ºçš„æŒ‡é’ˆå‚æ•°,å°†èŽ·å–åˆ°çš„è´¨æ•°ä¸ªæ•°ä¼ å‡º
+å‡½æ•°è¿”å›žå€¼ï¼š
+    æˆåŠŸè¿”å›ž0ï¼›
+    å¦‚æžœæœ‰é”™è¯¯è¿”å›ž-1
 
-ÖÊÊý£º³ýÁË1ºÍÊý±¾ÉíÖ®ÍâÃ»ÓÐÆäËûµÄÔ¼Êý¡£
-Ô¼Êý£ºÓÖ³ÆÒòÊý¡£ÕûÊýa³ýÒÔÕûÊýb(b¡Ù0) ³ýµÃµÄÉÌÕýºÃÊÇÕûÊý¶øÃ»ÓÐÓàÊý£¬ÎÒÃÇ¾ÍËµaÄÜ±»bÕû³ý£¬»òbÄÜÕû³ýa¡£
+è´¨æ•°ï¼šé™¤äº†1å’Œæ•°æœ¬èº«ä¹‹å¤–æ²¡æœ‰å…¶ä»–çš„çº¦æ•°ã€‚
+çº¦æ•°ï¼šåˆç§°å› æ•°ã€‚æ•´æ•°aé™¤ä»¥æ•´æ•°b(bâ‰ 0) é™¤å¾—çš„å•†æ­£å¥½æ˜¯æ•´æ•°è€Œæ²¡æœ‰ä½™æ•°ï¼Œæˆ‘ä»¬å°±è¯´aèƒ½è¢«bæ•´é™¤ï¼Œæˆ–bèƒ½æ•´é™¤aã€‚
 
-ÖÊÊý2³ýÁË1ºÍ±¾Éí2ÄÜ¹»Õû³ý2Ö®Íâ£¬Ã»ÓÐµÚÈý¸öÊýÄÜ¹»Õû³ý2£¬ËùÒÔ2ÊÇÖÊÊý¡£
-ÖÊÊý5³ýÁË1ºÍ±¾Éí5ÄÜ¹»Õû³ý5Ö®Íâ£¬Ã»ÓÐµÚÈý¸öÊýÄÜ¹»Õû³ý5£¬ËùÒÔ5ÊÇÖÊÊý¡£
+è´¨æ•°2é™¤äº†1å’Œæœ¬èº«2èƒ½å¤Ÿæ•´é™¤2ä¹‹å¤–ï¼Œæ²¡æœ‰ç¬¬ä¸‰ä¸ªæ•°èƒ½å¤Ÿæ•´é™¤2ï¼Œæ‰€ä»¥2æ˜¯è´¨æ•°ã€‚
+è´¨æ•°5é™¤äº†1å’Œæœ¬èº«5èƒ½å¤Ÿæ•´é™¤5ä¹‹å¤–ï¼Œæ²¡æœ‰ç¬¬ä¸‰ä¸ªæ•°èƒ½å¤Ÿæ•´é™¤5ï¼Œæ‰€ä»¥5æ˜¯è´¨æ•°ã€‚
 */
     int arr[10] = {1,2,3,4,5,6,7,8,9,13};
 

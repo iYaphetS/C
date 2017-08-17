@@ -7,8 +7,8 @@
 typedef struct word_t
 {
 	char *key;
-	char **trans;//ÎªÃ¿¸öÒâË¼¶¼µ¥¶ÀÉêÇë¶Ñ¿Õ¼ä´æ·Å
-	unsigned int count;//½âÊÍµÄ¸öÊı
+	char **trans;//ä¸ºæ¯ä¸ªæ„æ€éƒ½å•ç‹¬ç”³è¯·å †ç©ºé—´å­˜æ”¾
+	unsigned int count;//è§£é‡Šçš„ä¸ªæ•°
 	struct word_t *next;
 }word_t;
 
@@ -16,7 +16,7 @@ word_t *readdata_createSpace(FILE *fp)
 {
 	if (fp == NULL)
 		return NULL;
-	int line = 0;//ÎÄ¼şĞĞÊı
+	int line = 0;//æ–‡ä»¶è¡Œæ•°
 	
 	word_t *pHead = (word_t*)calloc(1, sizeof(word_t));
 	word_t *pNew = NULL;
@@ -29,7 +29,7 @@ word_t *readdata_createSpace(FILE *fp)
 		char translate[1024] = { 0 };
 		if (line % 2 == 0)
 		{
-			//·ÖÅä½á¹¹ÌåÄÚ´æ¿Õ¼ä
+			//åˆ†é…ç»“æ„ä½“å†…å­˜ç©ºé—´
 			pNew = (word_t*)calloc(1, sizeof(word_t));
 			if (pNew == NULL)
 			{
@@ -37,7 +37,7 @@ word_t *readdata_createSpace(FILE *fp)
 				break;
 			}
 			sscanf(buf, "#%[^\n]", word);
-			//·ÖÅäkey¶ÔÓ¦µÄÄÚ´æ¿Õ¼ä
+			//åˆ†é…keyå¯¹åº”çš„å†…å­˜ç©ºé—´
 			pNew->key = calloc(1, strlen(word) + 1);
 			strcpy(pNew->key, word);
 		}
@@ -47,20 +47,20 @@ word_t *readdata_createSpace(FILE *fp)
 			sscanf(buf, "%*[^:]:%[^\n]", translate);
 
 			char *f = translate;
-			int n = 0;//@µÄ¸öÊı£¬µ¥´Ê·­ÒëµÄµÄ¸öÊı£¬ ±È@¶àÒ»¸ö
+			int n = 0;//@çš„ä¸ªæ•°ï¼Œå•è¯ç¿»è¯‘çš„çš„ä¸ªæ•°ï¼Œ æ¯”@å¤šä¸€ä¸ª
 			while (*f)
 			{
 				if (*f == '@')
 					n++;
 				f++;
 			}
-			//ÏÈÎª¶ş¼¶Ö¸Õëtrans¸ù¾İÃ¿¸öµ¥´Ê¸öÊı·ÖÅäÒ»Æ¬Ö¸ÕëÊı×é
+			//å…ˆä¸ºäºŒçº§æŒ‡é’ˆtransæ ¹æ®æ¯ä¸ªå•è¯ä¸ªæ•°åˆ†é…ä¸€ç‰‡æŒ‡é’ˆæ•°ç»„
 			pNew->trans = calloc(n + 1, sizeof(char *));
 
 			char *k = strtok(translate, "@");
 			while (k)
 			{
-				//È»ºó¶ÔÖ¸ÕëÊı×éÃ¿¸ö³ÉÔ±·ÖÅäÄÚ´æ¿Õ¼ä£¬²¢½«Ã¿¸ö·­Òë·Ö±ğ¿½±´µ½¶ÔÓ¦ÄÚ´æ¿Õ¼ä
+				//ç„¶åå¯¹æŒ‡é’ˆæ•°ç»„æ¯ä¸ªæˆå‘˜åˆ†é…å†…å­˜ç©ºé—´ï¼Œå¹¶å°†æ¯ä¸ªç¿»è¯‘åˆ†åˆ«æ‹·è´åˆ°å¯¹åº”å†…å­˜ç©ºé—´
 				pNew->trans[pNew->count] = calloc(1, strlen(k) + 1);
 				strcpy(pNew->trans[pNew->count], k);
 				pNew->count++;
@@ -150,16 +150,16 @@ void freespace(word_t **pt)
 
 int main()
 {
-	long start_ms = 0;//¼ÇÂ¼º¯ÊıÖ´ĞĞµÄ¿ªÊ¼Ê±¼ä
-	long end_ms = 0;//¼ÇÂ¼º¯ÊıÖ´ĞĞµÄ½áÊøÊ±¼ä
+	long start_ms = 0;//è®°å½•å‡½æ•°æ‰§è¡Œçš„å¼€å§‹æ—¶é—´
+	long end_ms = 0;//è®°å½•å‡½æ•°æ‰§è¡Œçš„ç»“æŸæ—¶é—´
 
 	start_ms = clock();
 	FILE *fp = fopen("dict.txt", "r");
 	if (fp == NULL)
 		return -1;	
-	word_t *t = readdata_createSpace(fp);//·µ»Ø½á¹¹ÌåÀàĞÍµÄÍ·½ÚµãµÄµÄÖ¸Õë
+	word_t *t = readdata_createSpace(fp);//è¿”å›ç»“æ„ä½“ç±»å‹çš„å¤´èŠ‚ç‚¹çš„çš„æŒ‡é’ˆ
 	end_ms = clock();
-	printf("open_dict used %ld ms\n\n", end_ms - start_ms);//´òÓ¡º¯ÊıÖ´ĞĞÊ±¼ä£¬µ¥Î»£ººÁÃë
+	printf("open_dict used %ld ms\n\n", end_ms - start_ms);//æ‰“å°å‡½æ•°æ‰§è¡Œæ—¶é—´ï¼Œå•ä½ï¼šæ¯«ç§’
 
 	char buf[1024] = { 0 };
 	while (1)
@@ -172,13 +172,13 @@ int main()
 		start_ms = clock();
 		search(buf, t);
 		end_ms = clock();
-		printf("search_dict used %ld ms\n\n", end_ms - start_ms);//´òÓ¡º¯ÊıÖ´ĞĞÊ±¼ä£¬µ¥Î»£ººÁÃë
+		printf("search_dict used %ld ms\n\n", end_ms - start_ms);//æ‰“å°å‡½æ•°æ‰§è¡Œæ—¶é—´ï¼Œå•ä½ï¼šæ¯«ç§’
 	}
 
 	start_ms = clock();
 	freespace(&t);
 	end_ms = clock();
-	printf("free_dict used %ld ms\n", end_ms - start_ms);//´òÓ¡º¯ÊıÖ´ĞĞÊ±¼ä£¬µ¥Î»£ººÁÃë
+	printf("free_dict used %ld ms\n", end_ms - start_ms);//æ‰“å°å‡½æ•°æ‰§è¡Œæ—¶é—´ï¼Œå•ä½ï¼šæ¯«ç§’
 
 	fclose(fp);
 	return 0;

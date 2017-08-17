@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-int isOddNumber(unsigned num)//ÅĞ¶ÏÊÇ·ñÎªÆæÊı
+int isOddNumber(unsigned num)//åˆ¤æ–­æ˜¯å¦ä¸ºå¥‡æ•°
 {
     int ret;
     if(num % 2)
@@ -15,18 +15,18 @@ int isOddNumber(unsigned num)//ÅĞ¶ÏÊÇ·ñÎªÆæÊı
 int main10()
 {
     /*
-ÆæÊı¡£
-    º¯ÊıÔ­ĞÍ int isOddNumber(unsigned int number);
-    º¯Êı¹¦ÄÜ ÅĞ¶Ï²ÎÊınumberÊÇ·ñÊÇÆæÊı ÆæÊıÅĞ¶ÏÒÀ¾İÊÇÊÇ·ñÄÜ¹»±»2Õû³ı¡£
-    º¯Êı·µ»ØÖµ Èç¹ûÊÇÆæÊı·µ»Ø0;Èç¹û²»ÊÇÆæÊı·µ»Ø1
+å¥‡æ•°ã€‚
+    å‡½æ•°åŸå‹ int isOddNumber(unsigned int number);
+    å‡½æ•°åŠŸèƒ½ åˆ¤æ–­å‚æ•°numberæ˜¯å¦æ˜¯å¥‡æ•° å¥‡æ•°åˆ¤æ–­ä¾æ®æ˜¯æ˜¯å¦èƒ½å¤Ÿè¢«2æ•´é™¤ã€‚
+    å‡½æ•°è¿”å›å€¼ å¦‚æœæ˜¯å¥‡æ•°è¿”å›0;å¦‚æœä¸æ˜¯å¥‡æ•°è¿”å›1
 */
     unsigned num;
     scanf("%d", &num);
 
     int ret = isOddNumber(num);
     if(ret == 0)
-        printf("ÆæÊı\n");
+        printf("å¥‡æ•°\n");
     else
-        printf("Å¼Êı\n");
+        printf("å¶æ•°\n");
 
 }

@@ -9,7 +9,7 @@ typedef struct Person
 	char name[64];
 	int age;
 }Person;
-//Ãû×ÖÅÅĞò
+//åå­—æ’åº
 int mycomparebyName(void *data1, void *data2)
 {
 	Person *d1 = (Person *)data1;
@@ -17,7 +17,7 @@ int mycomparebyName(void *data1, void *data2)
 
 	return strcmp(d1->name, d2->name);
 }
-//ÄêÁäÅÅĞò
+//å¹´é¾„æ’åº
 int mycomparebyAge(void *data1, void *data2)
 {
 	Person *d1 = (Person *)data1;
@@ -73,7 +73,7 @@ bool my_compary(void *data1, void *data2)
 }
 void test()
 {
-	//Á´±íĞÅÏ¢µÄ³õÊ¼»¯£¨ÎªÆä·ÖÅäÄÚ´æ¿Õ¼ä£©
+	//é“¾è¡¨ä¿¡æ¯çš„åˆå§‹åŒ–ï¼ˆä¸ºå…¶åˆ†é…å†…å­˜ç©ºé—´ï¼‰
 	LList * mylist = LinkList_init();
 
 	Person p1 = { "A", 10 };
@@ -87,48 +87,48 @@ void test()
 	LinkList_insert(mylist, 0, &p3);//30 20 10
 	LinkList_insert(mylist, 3, &p4);//30 20 10 40
 	LinkList_insert(mylist, 0, &p5);//50 30 20 10 40
-	printf("======±éÀú======\n");
+	printf("======éå†======\n");
 	LinkList_foreach(mylist, mylsit_print);
-	printf("======ÄæĞò±éÀú======\n");
+	printf("======é€†åºéå†======\n");
 	LinkList_reverse_foreach(mylist, mylsit_print);
-	printf("=======ÄæÖÃ=====\n");
+	printf("=======é€†ç½®=====\n");
 	LinkList_reverse(mylist);
 	LinkList_foreach(mylist, mylsit_print);
-	printf("======Ãû×ÖÅÅĞò======\n");
+	printf("======åå­—æ’åº======\n");
 	LinkList_BubbleSort(mylist, mycomparebyName);
 	LinkList_foreach(mylist, mylsit_print);
-	printf("======ÄêÁäÅÅĞò======\n");
+	printf("======å¹´é¾„æ’åº======\n");
 	LinkList_SelectionSort(mylist, mycomparebyAge);
 	LinkList_foreach(mylist, mylsit_print);
 	/*
 	{
 		mylsit_print(pnode->data);
-	int a = 10;//Ğ´£¨void *£©10------·ÃÎÊÒç³ö----ÕâÑùĞ´×ÖÃæÁ¿10·ÖÅäÄÚ´æÎŞ·¨·ÃÎÊ
+	int a = 10;//å†™ï¼ˆvoid *ï¼‰10------è®¿é—®æº¢å‡º----è¿™æ ·å†™å­—é¢é‡10åˆ†é…å†…å­˜æ— æ³•è®¿é—®
 	void *p = &a;
 	LinkNode * pnode = LinkList_searchNodeByval(mylist, p, my_compary);
 	if (NULL != pnode)
 	}
 	*/
-	printf("======²éÕÒ½Úµã======\n");
+	printf("======æŸ¥æ‰¾èŠ‚ç‚¹======\n");
 	Person p6 = { "G", 50 };
 	Person *ret = (Person *)LinkList_searchNodeByval(mylist, &p6, my_compary);
 	if (ret != NULL)
 	{
 		printf("name = %s age = %d\n", ret->name, ret->age);
 	}	
-	printf("======É¾³ı½Úµã======\n");
+	printf("======åˆ é™¤èŠ‚ç‚¹======\n");
 	LinkList_delete(mylist, 0);
 	LinkList_foreach(mylist, mylsit_print);
-	printf("======É¾³ı½Úµã======\n");
+	printf("======åˆ é™¤èŠ‚ç‚¹======\n");
 	LinkList_delete(mylist, 2);
 	LinkList_foreach(mylist, mylsit_print);
-	printf("=======É¾³ı½Úµã=====\n");
+	printf("=======åˆ é™¤èŠ‚ç‚¹=====\n");
 	LinkList_delete(mylist, 6);
 	LinkList_foreach(mylist, mylsit_print);
-	printf("======É¾³ı½Úµã======\n");
+	printf("======åˆ é™¤èŠ‚ç‚¹======\n");
 	LinkList_delete(mylist, 0);
 	LinkList_foreach(mylist, mylsit_print);
-	printf("=======Ïú»ÙÁ´±í=====\n");
+	printf("=======é”€æ¯é“¾è¡¨=====\n");
 	LinkList_destroy(mylist);
 
 }

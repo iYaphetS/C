@@ -2,8 +2,8 @@
 #include <string.h>
 
 /*
-* ����һ���ַ�����������е�һ�γ��ֵĲ��ظ����ַ�
-* ����: ���� aabccdeff ����� b
+* 输入一个字符串，输出其中第一次出现的不重复的字符
+* 例如: 输入 aabccdeff 则输出 b
 */
 int main1()
 {
@@ -19,7 +19,7 @@ int main1()
         for (j = 0; j < len; j++)
         {
             if (j == i)
-                //j++;//���ܷ������
+                //j++;//可能访问溢出
                 continue;
             if (s[i] == s[j])
             {
@@ -48,8 +48,8 @@ int main()
     int i;
     for (i = 0; i < len; i++)
     {
-        num[s[i]]++;//��¼ÿ���ַ����ֵĸ���
-        index[s[i]] = i;//��¼ÿ���ַ��������ֵ��±�
+        num[s[i]]++;//记录每个字符出现的个数
+        index[s[i]] = i;//记录每个字符的最后出现的下标
     }
 
     int min = len;

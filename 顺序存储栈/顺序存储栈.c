@@ -21,7 +21,7 @@ void test()
 	push_Stack(stack, &p4);
 	push_Stack(stack, &p5);
 
-	while (stack->size > 0)//»òÕßsize_Stack(stack) > 0
+	while (stack->size > 0)//æˆ–è€…size_Stack(stack) > 0
 	{
 		Person *temp = (Person *)top_Stack(stack);
 		printf("name = %s, age = %d\n", temp->name, temp->age);

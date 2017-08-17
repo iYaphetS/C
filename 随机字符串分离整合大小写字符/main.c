@@ -8,7 +8,7 @@
 
 void TransString(char *pstr,char len)
 {
-   //����һð����������ɸѡ��ǰ����ַ��Ǵ�д����һ���ַ���Сд���ͽ�������
+   //方法一冒泡排序，条件筛选，前面的字符是大写，下一个字符是小写，就将他交换
     for(int i = 0; i < len - 1; i++)
     {
         for(int j = 0; j < len - i - 1; j++)
@@ -22,8 +22,8 @@ void TransString(char *pstr,char len)
 
         }
     }
-    //�����������ַ�����������д�ַ��������ŵ���ʱ�����У���������ַ���������ǰ�ƶ�
-    //Ȼ�����ŵ��ַ�β��
+    //方法二遍历字符串，遇到大写字符，将它放到零时变量中，将后面的字符串整体向前移动
+    //然后将它放到字符尾部
 //    int num = 0;
 //    char *p = pstr;
 //    while(*p)
@@ -46,7 +46,7 @@ void TransString(char *pstr,char len)
 //        else
 //        {
 //            p++;
-//            count++;//����Сд��ĸ�ĸ���
+//            count++;//计算小写字母的个数
 //        }
 //        if(count == num)
 //            break;
@@ -57,12 +57,12 @@ void TransString(char *pstr,char len)
 int main42()
 {
 /*
-��һ������γɵ��ַ����еĴ�д��ĸ����ԭ����˳����õ��ַ�����벿��
-Сд��ĸ�����ַ���ǰ�벿�֡�
-���� AbCdefGHijLKdfkjf
+将一串随机形成的字符串中的大写字母按照原来的顺序放置到字符串后半部分
+小写字母置于字符串前半部分。
+形如 AbCdefGHijLKdfkjf
      ACGHLKbdefijdfkjf
-����ԭ������ int TransString(char *pstr,char len);
-ʵ�������������ַ�������ת��  ��ʾ����ռ価���١�
+函数原型如下 int TransString(char *pstr,char len);
+实现上述函数对字符串进行转换  提示额外空间尽量少。
 */
     char buf[100] = "AbCdefGHijLKdfkjf";
     int len = strlen(buf);

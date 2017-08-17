@@ -6,34 +6,34 @@ int main()
 	
 	/*
 	
-    ÓÐÒ»¸ö×Ö·ûÊý×é
-    ÕûÊýÊÇÈÎÒâµÄ£¬ÖÐ¼ä¿ÉÄÜÊÇ* + - /
+    æœ‰ä¸€ä¸ªå­—ç¬¦æ•°ç»„
+    æ•´æ•°æ˜¯ä»»æ„çš„ï¼Œä¸­é—´å¯èƒ½æ˜¯* + - /
     char a[100] = "43+56="
-    Ð´Ò»¸ö³ÌÐò£¬½«½áËãµÄ½á¹û×·¼Óµ½×Ö·û´®aµÄºóÃæ
-    ³ÌÐòÖ´ÐÐÍê³ÉºóaµÄÖµÊÇ"43+56=99"
+    å†™ä¸€ä¸ªç¨‹åºï¼Œå°†ç»“ç®—çš„ç»“æžœè¿½åŠ åˆ°å­—ç¬¦ä¸²açš„åŽé¢
+    ç¨‹åºæ‰§è¡Œå®ŒæˆåŽaçš„å€¼æ˜¯"43+56=99"
     
 	*/
-	//·ÖÎö£¬ÓÉÓÚÒª×·¼Ó£¬¾ÍÒªÓÐÁ½¸ö×Ö·ûÊý×éÀ´·Ö±ð´æ´¢¼ÆËã±í´ïÊ½ºÍÔËËã½á¹û
+	//åˆ†æžï¼Œç”±äºŽè¦è¿½åŠ ï¼Œå°±è¦æœ‰ä¸¤ä¸ªå­—ç¬¦æ•°ç»„æ¥åˆ†åˆ«å­˜å‚¨è®¡ç®—è¡¨è¾¾å¼å’Œè¿ç®—ç»“æžœ
 	char buf1[100] = { 0 };
 	char buf2[100] = { 0 };
 	int num1 = 0;
 	int num2 = 0;
 
 	//scanf("%s", buf1);
-	fgets(buf1, sizeof(buf1), stdin);//fgets»á°Ñ»Ø³µµ±³É×Ö·û´®µÄÒ»²¿·ÖÊµ¼ÊÊäÈëµÄÊÇ24+23=\n\0Êµ¼ÊÓÐÐ§×Ö·ûÊÇ7¸ö
+	fgets(buf1, sizeof(buf1), stdin);//fgetsä¼šæŠŠå›žè½¦å½“æˆå­—ç¬¦ä¸²çš„ä¸€éƒ¨åˆ†å®žé™…è¾“å…¥çš„æ˜¯24+23=\n\0å®žé™…æœ‰æ•ˆå­—ç¬¦æ˜¯7ä¸ª
 
 	printf("%d\n", strlen(buf1));
 	buf1[strlen(buf1) - 1] = '\0';
 
-	sscanf(buf1, "%d+%d=", &num1, &num2);//½«×Ö·û´®ÖÐ×Ö·û¸ñÊ½»¯¿ØÖÆ·û´æ·ÅÔÚ±äÁ¿ÖÐ
+	sscanf(buf1, "%d+%d=", &num1, &num2);//å°†å­—ç¬¦ä¸²ä¸­å­—ç¬¦æ ¼å¼åŒ–æŽ§åˆ¶ç¬¦å­˜æ”¾åœ¨å˜é‡ä¸­
 
-	sprintf(buf2, "%d", num1 + num2);//½«±äÁ¿ÒÔ¸ñÊ½»¯·½Ê½´æ·Åµ½±äÁ¿ÖÐ
+	sprintf(buf2, "%d", num1 + num2);//å°†å˜é‡ä»¥æ ¼å¼åŒ–æ–¹å¼å­˜æ”¾åˆ°å˜é‡ä¸­
 
 	strcat(buf1, buf2);
 
 	printf("%s\n", buf1);
 	
-	/*×Ö·û´®ÒÑ¾­È·¶¨£¬²»ÓÃÊÖ¶¯´ÓÆÁÄ»ÊäÈë
+	/*å­—ç¬¦ä¸²å·²ç»ç¡®å®šï¼Œä¸ç”¨æ‰‹åŠ¨ä»Žå±å¹•è¾“å…¥
 		char a[100] = "43+56=";
     char s[100] = {0};
     int num1, num2;

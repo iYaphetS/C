@@ -37,9 +37,9 @@ int calc(int num1, char c, int num2)
 int main13(int argc, char **args)
 {
     /*
-Ê¹ÓÃmainº¯Êı²ÎÊıÍê³ÉËÄÔòÔËËãÆ÷¡£
-±àÒëÖ¸Áî£ºgcc -o app main.c app.c
-Ğ§¹ûÈçÏÂ£º
+ä½¿ç”¨mainå‡½æ•°å‚æ•°å®Œæˆå››åˆ™è¿ç®—å™¨ã€‚
+ç¼–è¯‘æŒ‡ä»¤ï¼šgcc -o app main.c app.c
+æ•ˆæœå¦‚ä¸‹ï¼š
 ./app 12 + 13
 12+13=25
 
@@ -56,7 +56,7 @@ int main13(int argc, char **args)
 error invalid operator
 */
     if(argc < 4)
-        printf("²ÎÊı²»×ã£¬ÇëÊäÈë%s Êı1 ÔËËã·û Êı2\n", args[0]);
+        printf("å‚æ•°ä¸è¶³ï¼Œè¯·è¾“å…¥%s æ•°1 è¿ç®—ç¬¦ æ•°2\n", args[0]);
     //scanf("%s %s %s", args[1], args[2], args[3]);
     int ret = calc(atoi(args[1]), args[2][0], atoi(args[3]));
 

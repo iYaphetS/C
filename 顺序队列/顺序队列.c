@@ -47,7 +47,7 @@ void test()
 	{
 		printf("func destory_SqeQueue err:%d\n", ret);
 	}
-	printf("³É¹¦\n");
+	printf("æˆåŠŸ\n");
 }
 int main()
 {

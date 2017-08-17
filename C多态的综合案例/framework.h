@@ -1,6 +1,6 @@
 #pragma once
 
-//¿ò¼Üº¯ÊýµÄÉùÃ÷
+//æ¡†æž¶å‡½æ•°çš„å£°æ˜Ž
 #include "CSocketProtocol.h"
 #include "CEncDesProtocol.h"
 

@@ -1,5 +1,5 @@
 #include "des.h"
-//加解密函数的实现
+//鍔犺В瀵嗗嚱鏁扮殑瀹炵幇
 int enc_file(unsigned char *src, int src_len,
 	unsigned char *dest, int *dest_len)
 {

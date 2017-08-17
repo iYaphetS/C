@@ -4,7 +4,7 @@
 
 int ip_to_num(char *buf, int *n)
 {
-	//ip×ªÕûÊı192.168.0.1 -------
+	//ipè½¬æ•´æ•°192.168.0.1 -------
 	if (buf == NULL)
 		return -1;
 
@@ -12,7 +12,7 @@ int ip_to_num(char *buf, int *n)
 	int a, b, c, d;
 	sscanf(buf, "%d.%d.%d.%d", &a, &b, &c, &d);
 	unsigned char *temp = (unsigned char *)&num;
-	//ÕûÊıºÍÊı×é¸ßµØÎ»ÕıºÃÏà·´
+	//æ•´æ•°å’Œæ•°ç»„é«˜åœ°ä½æ­£å¥½ç›¸å
 	temp[0] = d;
 	temp[1] = c;
 	temp[2] = b;
@@ -31,7 +31,7 @@ int num_to_ip(int num, char *buf)
 	b = temp[2];
 	a = temp[3];
 
-	//ÕûÊıºÍÊı×é¸ßµØÎ»ÕıºÃÏà·´
+	//æ•´æ•°å’Œæ•°ç»„é«˜åœ°ä½æ­£å¥½ç›¸å
 	sprintf(buf, "%d.%d.%d.%d", a, b, c, d);
 	return 0;
 }

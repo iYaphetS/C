@@ -33,7 +33,7 @@ void freeBiTree(TreeNode *root)
 	}
 	freeBiTree(root->lchild);
 	freeBiTree(root->rchild);
-	printf("�ͷţ�%c ", root->c);
+	printf("释放：%c ", root->c);
 	free(root);
 	root = NULL;
 }
